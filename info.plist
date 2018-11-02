@@ -247,15 +247,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>query=$1
-baseName=`basename "$query"`
-filename="${baseName%.*}"
-
-ASpath="tell application \"DEVONthink Pro\" to get path of (get record with uuid \""$filename"\")"
-filePath="`/usr/bin/osascript -e "$ASpath"`"
-
-# echo "$filename"
-# echo "$ASpath"
+				<string>filePath=$(python getPathFromDtFile.py "$1")
 open "$filePath"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -572,7 +564,7 @@ open "x-devonthink-item://${filename}?reveal=1"</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>1.7</string>
+	<string>2.0</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
