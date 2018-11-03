@@ -247,7 +247,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>filePath=$(python getPathFromDtFile.py "$1")
+				<string>filePath=$(python getPathFromMetaFile.py "$1")
 open "$filePath"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -566,6 +566,6 @@ open "x-devonthink-item://${filename}?reveal=1"</string>
 	<key>version</key>
 	<string>2.0</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/mpco/AlfredWorkflow-DEVONthink-Search</string>
 </dict>
 </plist>
