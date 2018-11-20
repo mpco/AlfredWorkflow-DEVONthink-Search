@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.mpco.DEVONthinkSearch</string>
+	<string>com.mpco.DEVONthinkProSearch</string>
 	<key>category</key>
-	<string>Tools</string>
+	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>09CAFD3F-B629-406F-9670-2B749618C1F9</key>
+		<key>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>C522F759-4BD7-4268-9E1A-CC66C7BC16C5</string>
+				<string>F904A209-781E-466D-9D44-734E14812CC4</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -21,24 +21,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>2975E8AA-27C4-4AEA-87AA-52D1D2FCFE00</key>
+		<key>F904A209-781E-466D-9D44-734E14812CC4</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>09CAFD3F-B629-406F-9670-2B749618C1F9</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>AEEE74EC-013E-4E75-9613-B680942F4B57</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>6F0540B9-8369-4632-BB26-562C84016094</string>
+				<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -48,7 +35,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>EF2B8184-401B-4AC3-B2BF-76E1D696F0B8</string>
+				<string>C1A38576-ABC5-4202-BC67-0921672A8568</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
@@ -58,44 +45,11 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>5ADFA38B-5E2B-4BE5-8256-8E5977A665A7</string>
+				<string>72C81C8A-AD3A-4675-A407-B01AD86F0592</string>
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string>Reveal file in DEVONthink Window</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>C522F759-4BD7-4268-9E1A-CC66C7BC16C5</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>6F0540B9-8369-4632-BB26-562C84016094</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>EF2B8184-401B-4AC3-B2BF-76E1D696F0B8</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string>Open With External Editor</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>5ADFA38B-5E2B-4BE5-8256-8E5977A665A7</string>
-				<key>modifiers</key>
-				<integer>524288</integer>
-				<key>modifiersubtext</key>
-				<string>Reveal file in DEVONthink Window</string>
+				<string>Reveal in DEVONthink</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -104,13 +58,41 @@
 	<key>createdby</key>
 	<string>Charles Ma</string>
 	<key>description</key>
-	<string>Search DEVONthink Documents</string>
+	<string>Powerful tool for searching in DEVONthink Pro / Pro Office</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>DEVONthink Search</string>
+	<string>DEVONthink Pro Search</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+  var query = argv[0];
+	const DNt = Application('DEVONthink Pro');
+DNt.openWindowFor({record: DNt.getRecordWithUuid(query)})  
+//return query;
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -122,233 +104,9 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openfile</string>
 			<key>uid</key>
-			<string>6F0540B9-8369-4632-BB26-562C84016094</string>
+			<string>C1A38576-ABC5-4202-BC67-0921672A8568</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>anchorfields</key>
-				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>daterange</key>
-				<integer>0</integer>
-				<key>fields</key>
-				<array>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemFinderComment</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemTextContent</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemTitle</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemUserTags</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemKind</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-				</array>
-				<key>includesystem</key>
-				<false/>
-				<key>keyword</key>
-				<string>dnk</string>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>scopes</key>
-				<array/>
-				<key>subtext</key>
-				<string>Search in All Indexed Databases</string>
-				<key>title</key>
-				<string>DEVONthink Search</string>
-				<key>types</key>
-				<array>
-					<string>com.devon-technologies.metadata.think</string>
-					<string>com.devon-technologies.metadata.thinkpro</string>
-				</array>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.filefilter</string>
-			<key>uid</key>
-			<string>AEEE74EC-013E-4E75-9613-B680942F4B57</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>filePath=$(python getPathFromMetaFile.py "$1")
-open "$filePath"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>EF2B8184-401B-4AC3-B2BF-76E1D696F0B8</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>anchorfields</key>
-				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>daterange</key>
-				<integer>0</integer>
-				<key>fields</key>
-				<array>
-					<dict>
-						<key>field</key>
-						<string>kMDItemDisplayName</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemFinderComment</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemTitle</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemTextContent</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-				</array>
-				<key>includesystem</key>
-				<false/>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>scopes</key>
-				<array/>
-				<key>subtext</key>
-				<string>within {var:folder}</string>
-				<key>title</key>
-				<string>Search for Documents</string>
-				<key>types</key>
-				<array>
-					<string>com.devon-technologies.metadata.think</string>
-					<string>com.devon-technologies.metadata.thinkpro</string>
-				</array>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.filefilter</string>
-			<key>uid</key>
-			<string>C522F759-4BD7-4268-9E1A-CC66C7BC16C5</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -362,9 +120,9 @@ open "$filePath"</string>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
-				<integer>102</integer>
+				<integer>68</integer>
 				<key>keyword</key>
-				<string>dnkd</string>
+				<string>dnd</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -376,57 +134,7 @@ open "$filePath"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>#!/usr/bin/env python
-# -*- coding: UTF-8 -*-
-
-import subprocess
-import json
-import os
-
-# path must end with "/"
-DEVONthinkMetaDir = os.path.expanduser("~/Library/Caches/Metadata/DEVONthink Pro 2/")
-
-result = {"items": [{"title": "All Database",
-                     "arg": DEVONthinkMetaDir, "subtitle": "Search in All Database"}]}
-
-DBcheckAppleScript = """
-set retVal to ""
-tell application "DEVONthink Pro"
-repeat with theDB in databases
-  set dbUUID to uuid of theDB as string
-  set dbName to name of theDB as string
-  if (length of retVal) &gt; 0 then
-    set retVal to retVal &amp; "\n"
-  end if
-  set retVal to retVal &amp; dbUUID &amp; "|||" &amp; dbName
-end repeat
-end tell
-"""
-
-rawData = subprocess.check_output(
-    ['/usr/bin/osascript', '-e', DBcheckAppleScript])
-rawData = rawData.strip()  # remove \n in the end
-# print rawData.split("\n")
-
-for item in rawData.split("\n"):
-    temp = {}
-    DBname = item[item.find("|||") + 3:]
-    DBUUID = item[: item.find("|||")]
-    DBMetaDirPath = DEVONthinkMetaDir + DBUUID
-
-    if os.path.exists(DBMetaDirPath):
-        temp["title"] = DBname
-        temp["subtitle"] = "Search in DB: " + DBname
-        temp["arg"] = DBMetaDirPath
-    else:
-        temp["title"] = DBname + " (not index, can't search)"
-        temp["subtitle"] = 'Enable "Create Spotlight Index" in "File -&gt; Database Properties" app menu'
-        temp["arg"] = DEVONthinkMetaDir
-        temp["valid"] = False
-    result['items'].append(temp)
-
-print json.dumps(result)
-</string>
+				<string>/usr/bin/osascript -l JavaScript getDbList.js</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -434,42 +142,65 @@ print json.dumps(result)
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Search in specific Databases</string>
+				<string>Choose Database to Search in</string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>2975E8AA-27C4-4AEA-87AA-52D1D2FCFE00</string>
+			<string>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>json</key>
-				<string>{
-  "alfredworkflow" : {
-    "config" : {
-      "scopes" : [
-        "{query}"
-      ]
-    },
-    "variables" : {
-      "folder": "{query}"
-    }
-  }
-}</string>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>dnt</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/osascript -l JavaScript search.js "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:selectedDbName}</string>
+				<key>title</key>
+				<string>Search in DEVONthink Pro</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.json</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>09CAFD3F-B629-406F-9670-2B749618C1F9</string>
+			<string>F904A209-781E-466D-9D44-734E14812CC4</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -494,7 +225,7 @@ open "x-devonthink-item://${filename}?reveal=1"</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>5ADFA38B-5E2B-4BE5-8256-8E5977A665A7</string>
+			<string>72C81C8A-AD3A-4675-A407-B01AD86F0592</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -503,68 +234,59 @@ open "x-devonthink-item://${filename}?reveal=1"</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>09CAFD3F-B629-406F-9670-2B749618C1F9</key>
+		<key>72C81C8A-AD3A-4675-A407-B01AD86F0592</key>
 		<dict>
 			<key>note</key>
-			<string>The JSON utility sets the folder dynamically as a config setting for the next File Filter.</string>
+			<string>Reveal in DEVONthink</string>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>650</integer>
 			<key>ypos</key>
-			<integer>360</integer>
+			<integer>480</integer>
 		</dict>
-		<key>2975E8AA-27C4-4AEA-87AA-52D1D2FCFE00</key>
+		<key>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</key>
 		<dict>
 			<key>xpos</key>
-			<integer>140</integer>
+			<integer>150</integer>
 			<key>ypos</key>
-			<integer>330</integer>
+			<integer>320</integer>
 		</dict>
-		<key>5ADFA38B-5E2B-4BE5-8256-8E5977A665A7</key>
-		<dict>
-			<key>note</key>
-			<string>Press Cmd+Enter to reveal file in DEVONthink window</string>
-			<key>xpos</key>
-			<integer>720</integer>
-			<key>ypos</key>
-			<integer>400</integer>
-		</dict>
-		<key>6F0540B9-8369-4632-BB26-562C84016094</key>
+		<key>C1A38576-ABC5-4202-BC67-0921672A8568</key>
 		<dict>
 			<key>note</key>
-			<string>Press the Return key to open the file you selected.</string>
+			<string>Open With External Editor</string>
 			<key>xpos</key>
-			<integer>720</integer>
+			<integer>650</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>320</integer>
 		</dict>
-		<key>AEEE74EC-013E-4E75-9613-B680942F4B57</key>
-		<dict>
-			<key>xpos</key>
-			<integer>140</integer>
-			<key>ypos</key>
-			<integer>160</integer>
-		</dict>
-		<key>C522F759-4BD7-4268-9E1A-CC66C7BC16C5</key>
+		<key>C7CBFA98-7135-4918-9F96-C7E039CE2C34</key>
 		<dict>
 			<key>note</key>
-			<string>Type the name of the file you want to search for within the folder defined earlier.</string>
+			<string>Open with DEVONthink</string>
 			<key>xpos</key>
-			<integer>470</integer>
+			<integer>650</integer>
 			<key>ypos</key>
-			<integer>330</integer>
+			<integer>150</integer>
 		</dict>
-		<key>EF2B8184-401B-4AC3-B2BF-76E1D696F0B8</key>
+		<key>F904A209-781E-466D-9D44-734E14812CC4</key>
 		<dict>
-			<key>note</key>
-			<string>Press Alt+Enter to open file with external editor</string>
 			<key>xpos</key>
-			<integer>720</integer>
+			<integer>370</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>320</integer>
 		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>ignoredDbUuidList</key>
+		<string>1FC1A637-D8CA-4807-B806-8617966870B5</string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>ignoredDbUuidList</string>
+	</array>
 	<key>version</key>
-	<string>2.0</string>
+	<string>3.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/mpco/AlfredWorkflow-DEVONthink-Search</string>
 </dict>
