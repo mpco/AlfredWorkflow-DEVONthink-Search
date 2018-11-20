@@ -1,7 +1,7 @@
 
 # DEVONthink Search
 
-Powerful tool for seaching in DEVONthink. 
+Powerful tool for seaching in DEVONthink. [中文说明](https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/blob/master/README_CN.md)
 
 There are two editions:
 
@@ -36,6 +36,8 @@ Then,
 ![Enter](https://user-images.githubusercontent.com/3690653/48790940-73625180-ed2b-11e8-89dc-6bf4f6b9e72a.png)
 
 ## Configuration
+
+**ONLY for DEVONthink Pro Search**
 
 Searching is performed in **all** opened databases when using `dnt` in `DEVONthink Pro Search`. You can ignore some databases by setting `ignoredDbUuidList` environment variable in Alfred workflow.
 
