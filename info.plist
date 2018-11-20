@@ -8,6 +8,19 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FD00A4FC-B807-4081-8AB4-9AEAC5EC2525</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</key>
 		<array>
 			<dict>
@@ -17,6 +30,16 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Enter to Search by Tags</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -50,6 +73,39 @@
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string>Reveal in DEVONthink</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FD00A4FC-B807-4081-8AB4-9AEAC5EC2525</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C1A38576-ABC5-4202-BC67-0921672A8568</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>72C81C8A-AD3A-4675-A407-B01AD86F0592</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -92,21 +148,6 @@ DNt.openWindowFor({record: DNt.getRecordWithUuid(query)})
 			<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>C1A38576-ABC5-4202-BC67-0921672A8568</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -158,6 +199,21 @@ DNt.openWindowFor({record: DNt.getRecordWithUuid(query)})
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>C1A38576-ABC5-4202-BC67-0921672A8568</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -205,6 +261,98 @@ DNt.openWindowFor({record: DNt.getRecordWithUuid(query)})
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/python getTagsList.py</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>getTagsList.py</string>
+				<key>subtext</key>
+				<string>{var:selectedDbName}</string>
+				<key>title</key>
+				<string>List all Tags</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>dntt</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/osascript -l JavaScript getRecordListByTag.js</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:selectedDbName}</string>
+				<key>title</key>
+				<string>Search by Tags in DEVONthink Pro</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>FD00A4FC-B807-4081-8AB4-9AEAC5EC2525</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -234,46 +382,60 @@ open "x-devonthink-item://${filename}?reveal=1"</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>350</integer>
+		</dict>
 		<key>72C81C8A-AD3A-4675-A407-B01AD86F0592</key>
 		<dict>
 			<key>note</key>
 			<string>Reveal in DEVONthink</string>
 			<key>xpos</key>
-			<integer>650</integer>
+			<integer>870</integer>
 			<key>ypos</key>
-			<integer>480</integer>
+			<integer>390</integer>
 		</dict>
 		<key>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</key>
 		<dict>
 			<key>xpos</key>
-			<integer>150</integer>
+			<integer>80</integer>
 			<key>ypos</key>
-			<integer>320</integer>
+			<integer>230</integer>
 		</dict>
 		<key>C1A38576-ABC5-4202-BC67-0921672A8568</key>
 		<dict>
 			<key>note</key>
 			<string>Open With External Editor</string>
 			<key>xpos</key>
-			<integer>650</integer>
+			<integer>870</integer>
 			<key>ypos</key>
-			<integer>320</integer>
+			<integer>230</integer>
 		</dict>
 		<key>C7CBFA98-7135-4918-9F96-C7E039CE2C34</key>
 		<dict>
 			<key>note</key>
 			<string>Open with DEVONthink</string>
 			<key>xpos</key>
-			<integer>650</integer>
+			<integer>870</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>60</integer>
 		</dict>
 		<key>F904A209-781E-466D-9D44-734E14812CC4</key>
 		<dict>
 			<key>xpos</key>
-			<integer>370</integer>
+			<integer>300</integer>
 			<key>ypos</key>
-			<integer>320</integer>
+			<integer>230</integer>
+		</dict>
+		<key>FD00A4FC-B807-4081-8AB4-9AEAC5EC2525</key>
+		<dict>
+			<key>xpos</key>
+			<integer>480</integer>
+			<key>ypos</key>
+			<integer>350</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -286,7 +448,7 @@ open "x-devonthink-item://${filename}?reveal=1"</string>
 		<string>ignoredDbUuidList</string>
 	</array>
 	<key>version</key>
-	<string>3.0</string>
+	<string>4.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/mpco/AlfredWorkflow-DEVONthink-Search</string>
 </dict>

@@ -25,7 +25,7 @@ There are two editions:
 ## Usage
 
 - Type `dnt + keywords` to search in all opened databases. 
-- Type `dnkd` to choose which datebase to search, press `Enter`, then type in `keywords` to search in the chosen database. 
+- Type `dnd` to choose which datebase to search, press `Enter`, then type in `keywords` to search in the chosen database. 
 
 Then,
 
@@ -53,5 +53,6 @@ CJK (Chinese, Japanese, and Korean) characters should be added `~` in the front 
 
 The regular expression `/(\p{Unified_Ideograph}+)/ug` can't match Japanese or Korean characters. You can research more perfect regular expressions which match CJK and tell me.
 
+## Todo
 
-
+- Search by tags
