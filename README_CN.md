@@ -5,12 +5,12 @@
 分为两个版本：
 
 - DEVONthink Search, 适用于 DEVONthink Personal。
-    - [点击下载]()
+    - [点击下载](https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/releases/download/3.0/DEVONthink.Search.alfredworkflow)
     - 搜索准确度一般，因为是利用生成的 Spotlight Index 进行搜索。
     - 需要开启数据库属性中的 `Create Spotlight Index` （默认开启）。
     - 不支持`dnd`指令与多个数据库。
 - DEVONthink Pro Search, 适用于 DEVONthink Pro / Pro Office。
-    - [点击下载]()
+    - [点击下载](https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/releases)
     - 搜索结果与 DEVONthink 中搜索结果一致，按照关键词匹配得分排列。（滤除搜索结果中的文件夹）
     - 无需开启数据库属性中的 `Create Spotlight Index`。
     - 搜索结果中显示的信息更丰富。
