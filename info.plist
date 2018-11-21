@@ -8,6 +8,39 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>23253F9B-2A9D-45AE-A8FA-4CF8E6FE54BF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C1A38576-ABC5-4202-BC67-0921672A8568</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>72C81C8A-AD3A-4675-A407-B01AD86F0592</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</key>
 		<array>
 			<dict>
@@ -130,10 +163,10 @@
 				<integer>68</integer>
 				<key>script</key>
 				<string>function run(argv) {
-  var query = argv[0];
-	const DNt = Application('DEVONthink Pro');
-DNt.openWindowFor({record: DNt.getRecordWithUuid(query)})  
-//return query;
+    var query = argv[0];
+    const DNt = Application('DEVONthink Pro');
+    DNt.openWindowFor({ record: DNt.getRecordWithUuid(query) })
+    //return query;
 }</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -316,8 +349,6 @@ DNt.openWindowFor({record: DNt.getRecordWithUuid(query)})
 				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
-				<key>keyword</key>
-				<string>dntt</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -329,7 +360,7 @@ DNt.openWindowFor({record: DNt.getRecordWithUuid(query)})
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/osascript -l JavaScript getRecordListByTag.js</string>
+				<string>/usr/bin/python getRecordListByTag.py</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -377,11 +408,65 @@ open "x-devonthink-item://${filename}?reveal=1"</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>dnm</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/python getRecordListByMultiTags.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search by Tags</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>23253F9B-2A9D-45AE-A8FA-4CF8E6FE54BF</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>23253F9B-2A9D-45AE-A8FA-4CF8E6FE54BF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>480</integer>
+			<key>ypos</key>
+			<integer>480</integer>
+		</dict>
 		<key>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</key>
 		<dict>
 			<key>xpos</key>
