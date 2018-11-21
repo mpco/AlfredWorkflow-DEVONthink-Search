@@ -165,6 +165,7 @@
 				<string>function run(argv) {
     var query = argv[0];
     const DNt = Application('DEVONthink Pro');
+	DNt.activate()
     DNt.openWindowFor({ record: DNt.getRecordWithUuid(query) })
     //return query;
 }</string>
@@ -360,7 +361,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python getRecordListByTag.py</string>
+				<string>/usr/bin/python getRecordListByTags.py "selectedTag"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -434,7 +435,7 @@ open "x-devonthink-item://${filename}?reveal=1"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python getRecordListByMultiTags.py "$1"</string>
+				<string>/usr/bin/python getRecordListByTags.py "inputTags" "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>

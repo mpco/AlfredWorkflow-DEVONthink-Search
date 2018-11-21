@@ -13,10 +13,19 @@ selectedDbUUID = os.getenv('selectedDbUUID', "")
 dtTagsFilePath = os.path.expanduser(
     "~/Library/Caches/Metadata/DEVONthink Pro 2/Lookup/{}.dtTags".format(selectedDbUUID))
 
+
+if not os.path.exists(dtTagsFilePath):
+    sys.stdout.write(json.dumps({"items": [{"title": "Tags File for this database not exists"}]}))
+    sys.exit()
+
 result = {"items": []}
 if dtTagsFilePath[-6:] == "dtTags":
     with open(dtTagsFilePath, 'rb') as f:
         r = f.read()
+    if not r:
+        sys.stdout.write(json.dumps({"items": [{"title": "No tag in the database"}]}))
+        sys.exit()
+
     rList = r.split("DTstTAGS")
 
     for tagStr in rList[1:]:
@@ -25,7 +34,7 @@ if dtTagsFilePath[-6:] == "dtTags":
             "title": tag,
             "subtitle": "Enter to list all files with this tag",
             # "arg": tag,
-            "variables": {"selectedTag": tag}
+            "variables": {"selectedTag": tag, "selectedDbUUID": selectedDbUUID}
         })
 
 sys.stdout.write(json.dumps(result))
