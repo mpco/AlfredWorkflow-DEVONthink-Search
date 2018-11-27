@@ -522,15 +522,18 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 	</dict>
 	<key>variables</key>
 	<dict>
+		<key>filterOutGroup</key>
+		<string></string>
 		<key>ignoredDbUuidList</key>
 		<string>1FC1A637-D8CA-4807-B806-8617966870B5</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
 		<string>ignoredDbUuidList</string>
+		<string>filterOutGroup</string>
 	</array>
 	<key>version</key>
-	<string>4.0</string>
+	<string>4.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/mpco/AlfredWorkflow-DEVONthink-Search</string>
 </dict>

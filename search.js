@@ -5,6 +5,7 @@ function run(argv) {
     var env = $.NSProcessInfo.processInfo.environment;
     env = ObjC.unwrap(env)
     if ("selectedDbUUID" in env) { var selectedDbUUID = $.getenv('selectedDbUUID') }
+    if ("filterOutGroup" in env) { var filterOutGroup = $.getenv('filterOutGroup').toLowerCase() }
     if ("ignoredDbUuidList" in env) {
         var ignoredDbUuidList = [];
         var tempList = $.getenv('ignoredDbUuidList').split(",");
@@ -49,7 +50,16 @@ function run(argv) {
             //location record.location()
 
             // ignore group
-            if (record.type() == 'group') { continue }
+            var titlePrefix = ""
+            if (record.type() == 'group') {
+                if (filterOutGroup == "yes") { continue }
+
+                titlePrefix = "[Group] "
+                if (record.location() == "/Tags/") {
+                    titlePrefix = "[Tag] "
+                }
+            }
+
 
             var locationInDb = record.location()
             if (locationInDb.length > 1) {
@@ -58,7 +68,7 @@ function run(argv) {
                 locationInDb = ""
             }
             item["type"] = "file"
-            item["title"] = record.name()
+            item["title"] = titlePrefix + record.name()
             item["score"] = record.score()
             item["arg"] = record.uuid()
             item["subtitle"] = "📂 " + record.database().name() + " " + locationInDb
@@ -82,6 +92,10 @@ function run(argv) {
     allResult.sort(function(a, b) {
         return (a.score > b.score) ? -1 : (a.score < b.score) ? 1 : 0;
     });
+
+    if (allResult.length == 0) {
+        return JSON.stringify({ "items": [{"title": "No document..."}] });
+    }
 
     return JSON.stringify({ "items": allResult });
 }

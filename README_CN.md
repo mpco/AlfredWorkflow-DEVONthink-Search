@@ -11,7 +11,7 @@
     - 仅支持下文中的 `dnt + 关键词` 搜索方式。
 - DEVONthink Pro Search, 适用于 DEVONthink Pro / Pro Office。
     - [点击下载](https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/releases)
-    - 搜索结果与 DEVONthink 中搜索结果一致，按照关键词匹配得分排列。（滤除搜索结果中的文件夹）
+    - 搜索结果与 DEVONthink 中搜索结果一致，按照关键词匹配得分排列。
     - 无需开启数据库属性中的 `Create Spotlight Index`。
     - 搜索结果中显示的信息更丰富。
 
@@ -42,15 +42,22 @@
 
 **仅适用于 DEVONthink Pro Search**
 
+### `ignoredDbUuidList`：屏蔽某些数据库
+
 使用 `dnt` 和 `dnm` 在所有数据库中进行搜索，但是我们可能需要屏蔽某些数据库。例如，我建立了一个**存档**数据库以保存一些文件，但平时一般不需要打开或查看。在 Alfred Workflow 环境变量 `ignoredDbUuidList` 中加入以**英文逗号**分隔的多个数据库 UUID 即可屏蔽这些数据库。设置后，依旧可以通过 `dnd` 指定在被屏蔽的数据库中进行搜索。
 
 具体步骤：
 
-1. 打开 DEVONthink，在窗口界面右侧右键点击某个数据库，选择 `Copy Database Link`，获得类似于 `x-devonthink-item://1FC1A542-D8CA-4807-B806-8617966870B5` 的链接。
+1. 打开 DEVONthink，在窗口界面左侧右键点击某个数据库，选择 `Copy Database Link`，获得类似于 `x-devonthink-item://1FC1A542-D8CA-4807-B806-8617966870B5` 的链接。
 2. 链接中的 `1FC1A542-D8CA-4807-B806-8617966870B5` 部分就是该数据库的 UUID。
 3. 如果仅屏蔽一个数据库，直接填入 UUID 即可。如果多个，则以英文逗号分隔后填入，如 `1DA1A542-D8CA-4897-B806-8627964878B5,52893041-45C2-459E-9423-C1986E783417`。
 
 ![设置](https://user-images.githubusercontent.com/3690653/48790986-9987f180-ed2b-11e8-8f64-846d96fd26b9.png)
+
+### `filterOutGroup`：在搜索结果中滤除文件夹和标签
+
+如果你想在 `dnt` 的搜索结果中滤除文件夹和表情，可以设置 `filterOutGroup` 为 `yes`。
+
 
 ## 存在的问题
 

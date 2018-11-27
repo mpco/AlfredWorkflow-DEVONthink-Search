@@ -12,7 +12,7 @@ There are two editions:
     - It **only** support the following `dnt` keyword and single database.
 - **DEVONthink Pro Search**, for DEVONthink Pro/Pro Office
     - [Download](https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/releases)
-    - Search results are the same as in DEVONthink, sorted by keywords matching score. (Groups in the results are filtered out.)
+    - Search results are the same as in DEVONthink, sorted by keywords matching score. 
     - It's not necessary to enable `Create Spotlight Index`.
     - The information displayed in the search results is more abundant.
 
@@ -42,6 +42,8 @@ After documents were listed,
 
 **ONLY for DEVONthink Pro Search**
 
+### `ignoredDbUuidList`: ignore databases
+
 `dnt` and `dnm` search in **all** opened databases  in `DEVONthink Pro Search`. You can ignore some databases by setting `ignoredDbUuidList` environment variable in Alfred workflow.
 
 1. Copy database link in DEVONthink, which is similar to `x-devonthink-item://1FC1A542-D8CA-4807-B806-8617966870B5`.
@@ -49,6 +51,10 @@ After documents were listed,
 3. Fill in workflow configuration with UUIDs. You should separate multiple UUIDs with comma(,).
 
 ![Configuration](https://user-images.githubusercontent.com/3690653/48790986-9987f180-ed2b-11e8-8f64-846d96fd26b9.png)
+
+### `filterOutGroup`: filter out group and tag in searching result
+
+You can set environment variable `filterOutGroup` to `yes` if you want to filter out group and tag.
 
 ## Known issues
 
@@ -59,5 +65,4 @@ The regular expression `/(\p{Unified_Ideograph}+)/ug` can't match Japanese or Ko
 
 ## Todo
 
-1. Import file/folder to DEVONthink.
-2. get unread records.
+1. get unread records.
