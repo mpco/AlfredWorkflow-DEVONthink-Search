@@ -167,7 +167,6 @@
     const DNt = Application('DEVONthink Pro');
 	DNt.activate()
     DNt.openWindowFor({ record: DNt.getRecordWithUuid(query) })
-    //return query;
 }</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -369,7 +368,7 @@
 				<key>subtext</key>
 				<string>{var:selectedDbName}</string>
 				<key>title</key>
-				<string>Search by Tags in DEVONthink Pro</string>
+				<string>List all Records with the Tags</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -390,11 +389,8 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>query=$1
-baseName=`basename "$query"`
-filename="${baseName%.*}"
-
-open "x-devonthink-item://${filename}?reveal=1"</string>
+				<string># $1: uuid
+open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
