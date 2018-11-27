@@ -63,8 +63,15 @@ function run(argv) {
             item["arg"] = record.uuid()
             item["subtitle"] = "📂 " + record.database().name() + " " + locationInDb
             item["icon"] = { "type": "fileicon", "path": record.path() }
+            var itemTagStr;
+            if (record.tags().length > 0) {
+                itemTagStr = record.tags().join(", ")
+            } else {
+                itemTagStr = "No Tag"
+            }
+
             item["mods"] = {
-                "cmd": { "valid": true, "arg": record.path(), "subtitle": "🏷 " + record.tags().join(", ") },
+                "cmd": { "valid": true, "arg": record.path(), "subtitle": "🏷 " + itemTagStr},
                 "alt": { "valid": true, "arg": record.uuid(), "subtitle": "Reveal in DEVONthink" }
             }
             allResult.push(item)
