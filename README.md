@@ -55,3 +55,9 @@ After documents were listed,
 CJK (Chinese, Japanese, and Korean) characters should be added `~` in the front when seaching in DEVONthink. For example, searching keywords `你abc我他` should be converted to `~你abc~我他`. It's added automatically in `DEVONthink Pro Search` by using regular expression `/(\p{Unified_Ideograph}+)/ug` to matching Chinese characters.
 
 The regular expression `/(\p{Unified_Ideograph}+)/ug` can't match Japanese or Korean characters. You can research more perfect regular expressions which match CJK and tell me.
+
+
+## Todo
+
+1. Import file/folder to DEVONthink.
+2. get unread records.
