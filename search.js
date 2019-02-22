@@ -1,4 +1,5 @@
 'use strict';
+
 function run(argv) {
     // read environment variables
     ObjC.import('stdlib')
@@ -81,9 +82,15 @@ function run(argv) {
             }
 
             item["mods"] = {
-                "cmd": { "valid": true, "arg": itemPath, "subtitle": "🏷 " + itemTagStr},
+                "cmd": { "valid": true, "arg": itemPath, "subtitle": "🏷 " + itemTagStr },
                 "alt": { "valid": true, "arg": itemUUID, "subtitle": "Reveal in DEVONthink" }
             }
+            item["text"] = {
+                "copy": "x-devonthink-item://" + item["arg"],
+                "largetype": "x-devonthink-item://" + item["arg"]
+            }
+            item["quicklookurl"] = itemPath
+
             allResult.push(item)
         }
     }
@@ -94,7 +101,7 @@ function run(argv) {
     });
 
     if (allResult.length == 0) {
-        return JSON.stringify({ "items": [{"title": "No document..."}] });
+        return JSON.stringify({ "items": [{ "title": "No document..." }] });
     }
 
     return JSON.stringify({ "items": allResult });
