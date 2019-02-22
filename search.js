@@ -43,12 +43,12 @@ function run(argv) {
         for (var key in resultList) {
             var record = resultList[key]
             var item = {}
-            //name     record.name()
-            //score    record.score()
-            //tags     record.tags()
-            //dbName   record.database().name()
-            //path     record.path()
-            //location record.location()
+            var itemName = record.name()
+            var itemScore = record.score()
+            var itemTags = record.tags()
+            var itemPath = record.path()
+            var itemLocation = record.location()
+            var itemUUID = record.uuid()
 
             // ignore group
             var titlePrefix = ""
@@ -56,34 +56,33 @@ function run(argv) {
                 if (filterOutGroup == "yes") { continue }
 
                 titlePrefix = "[Group] "
-                if (record.location() == "/Tags/") {
+                if (itemLocation == "/Tags/") {
                     titlePrefix = "[Tag] "
                 }
             }
 
-
-            var locationInDb = record.location()
-            if (locationInDb.length > 1) {
-                locationInDb = locationInDb.slice(0, -1).replace(/\//g, " > ")
+            if (itemLocation.length > 1) {
+                itemLocation = itemLocation.slice(0, -1).replace(/\//g, " > ")
             } else {
-                locationInDb = ""
+                itemLocation = ""
             }
             item["type"] = "file"
-            item["title"] = titlePrefix + record.name()
-            item["score"] = record.score()
-            item["arg"] = record.uuid()
-            item["subtitle"] = "📂 " + record.database().name() + " " + locationInDb
-            item["icon"] = { "type": "fileicon", "path": record.path() }
+            item["title"] = titlePrefix + itemName
+            item["score"] = itemScore
+            item["arg"] = itemUUID
+            item["subtitle"] = "📂 " + record.database().name() + " " + itemLocation
+            item["icon"] = { "type": "fileicon", "path": itemPath }
+
             var itemTagStr;
-            if (record.tags().length > 0) {
-                itemTagStr = record.tags().join(", ")
+            if (itemTags.length > 0) {
+                itemTagStr = itemTags.join(", ")
             } else {
                 itemTagStr = "No Tag"
             }
 
             item["mods"] = {
-                "cmd": { "valid": true, "arg": record.path(), "subtitle": "🏷 " + itemTagStr},
-                "alt": { "valid": true, "arg": record.uuid(), "subtitle": "Reveal in DEVONthink" }
+                "cmd": { "valid": true, "arg": itemPath, "subtitle": "🏷 " + itemTagStr},
+                "alt": { "valid": true, "arg": itemUUID, "subtitle": "Reveal in DEVONthink" }
             }
             allResult.push(item)
         }
