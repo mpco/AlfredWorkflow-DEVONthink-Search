@@ -91,8 +91,8 @@ function run(argv) {
                 "alt": { "valid": true, "arg": itemUUID, "subtitle": "Reveal in DEVONthink" }
             }
             item["text"] = {
-                "copy": "x-devonthink-item://" + item["arg"],
-                "largetype": "x-devonthink-item://" + item["arg"]
+                "copy": "x-devonthink-item://" + itemUUID,
+                "largetype": "x-devonthink-item://" + itemUUID
             }
             item["quicklookurl"] = itemPath
 
