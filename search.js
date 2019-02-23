@@ -70,7 +70,7 @@ function run(argv) {
             item["type"] = "file"
             item["title"] = titlePrefix + itemName
             item["score"] = itemScore
-            item["arg"] = itemUUID
+            item["arg"] = itemPath
             item["subtitle"] = "📂 " + record.database().name() + " " + itemLocation
             item["icon"] = { "type": "fileicon", "path": itemPath }
 
@@ -82,7 +82,7 @@ function run(argv) {
             }
 
             item["mods"] = {
-                "cmd": { "valid": true, "arg": itemPath, "subtitle": "🏷 " + itemTagStr },
+                "cmd": { "valid": true, "arg": itemUUID, "subtitle": "🏷 " + itemTagStr },
                 "alt": { "valid": true, "arg": itemUUID, "subtitle": "Reveal in DEVONthink" }
             }
             item["text"] = {

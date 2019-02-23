@@ -12,7 +12,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
+				<string>C1A38576-ABC5-4202-BC67-0921672A8568</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -22,11 +22,11 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>C1A38576-ABC5-4202-BC67-0921672A8568</string>
+				<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Open with DEVONthink</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -81,7 +81,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
+				<string>C1A38576-ABC5-4202-BC67-0921672A8568</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -91,11 +91,11 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>C1A38576-ABC5-4202-BC67-0921672A8568</string>
+				<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Open With External Editor</string>
+				<string>Open with DEVONthink</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -114,7 +114,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
+				<string>C1A38576-ABC5-4202-BC67-0921672A8568</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -124,11 +124,11 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>C1A38576-ABC5-4202-BC67-0921672A8568</string>
+				<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Open with DEVONthink</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -154,34 +154,6 @@
 	<string>DEVONthink Pro Search</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>function run(argv) {
-    var query = argv[0];
-    const DNt = Application('DEVONthink Pro');
-	DNt.activate()
-    DNt.openWindowFor({ record: DNt.getRecordWithUuid(query) })
-}</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>7</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -387,6 +359,34 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+    var query = argv[0];
+    const DNt = Application('DEVONthink Pro');
+	DNt.activate()
+    DNt.openWindowFor({ record: DNt.getRecordWithUuid(query) })
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
 				<string># $1: uuid
@@ -460,14 +460,14 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<key>23253F9B-2A9D-45AE-A8FA-4CF8E6FE54BF</key>
 		<dict>
 			<key>xpos</key>
-			<integer>480</integer>
+			<integer>450</integer>
 			<key>ypos</key>
-			<integer>480</integer>
+			<integer>510</integer>
 		</dict>
 		<key>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>270</integer>
 			<key>ypos</key>
 			<integer>350</integer>
 		</dict>
@@ -476,46 +476,46 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<key>note</key>
 			<string>Reveal in DEVONthink</string>
 			<key>xpos</key>
-			<integer>870</integer>
+			<integer>810</integer>
 			<key>ypos</key>
-			<integer>390</integer>
+			<integer>510</integer>
 		</dict>
 		<key>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</key>
 		<dict>
 			<key>xpos</key>
-			<integer>80</integer>
+			<integer>60</integer>
 			<key>ypos</key>
-			<integer>230</integer>
+			<integer>180</integer>
 		</dict>
 		<key>C1A38576-ABC5-4202-BC67-0921672A8568</key>
 		<dict>
 			<key>note</key>
 			<string>Open With External Editor</string>
 			<key>xpos</key>
-			<integer>870</integer>
+			<integer>810</integer>
 			<key>ypos</key>
-			<integer>230</integer>
+			<integer>180</integer>
 		</dict>
 		<key>C7CBFA98-7135-4918-9F96-C7E039CE2C34</key>
 		<dict>
 			<key>note</key>
 			<string>Open with DEVONthink</string>
 			<key>xpos</key>
-			<integer>870</integer>
+			<integer>810</integer>
 			<key>ypos</key>
-			<integer>60</integer>
+			<integer>350</integer>
 		</dict>
 		<key>F904A209-781E-466D-9D44-734E14812CC4</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>270</integer>
 			<key>ypos</key>
-			<integer>230</integer>
+			<integer>180</integer>
 		</dict>
 		<key>FD00A4FC-B807-4081-8AB4-9AEAC5EC2525</key>
 		<dict>
 			<key>xpos</key>
-			<integer>480</integer>
+			<integer>450</integer>
 			<key>ypos</key>
 			<integer>350</integer>
 		</dict>

@@ -101,14 +101,20 @@ for itemInfoStr in infoList:
     else:
         itemDbLocation = ""
     result["items"].append({
+        "type": "file",
         "title": itemName,
         "subtitle": "📂 " + itemDbName + " " + itemDbLocation,
-        "arg": itemUUID,
+        "arg": itemPath,
         "icon": {"type": "fileicon", "path": itemPath},
         "mods": {
-            "cmd": {"valid": True, "arg": itemPath, "subtitle": "🏷 " + ", ".join(itemTagList)},
+            "cmd": {"valid": True, "arg": itemUUID, "subtitle": "🏷 " + ", ".join(itemTagList)},
             "alt": {"valid": True, "arg": itemUUID, "subtitle": "Reveal in DEVONthink"}
-        }
+        },
+        "text": {
+            "copy": "x-devonthink-item://" + itemUUID,
+            "largetype": "x-devonthink-item://" + itemUUID
+        },
+        "quicklookurl": itemPath
     })
 
 print(json.dumps(result))
