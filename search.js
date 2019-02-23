@@ -51,26 +51,31 @@ function run(argv) {
             var itemLocation = record.location()
             var itemUUID = record.uuid()
 
-            // ignore group
-            var titlePrefix = ""
-            if (record.type() == 'group') {
-                if (filterOutGroup == "yes") { continue }
-
-                titlePrefix = "[Group] "
-                if (itemLocation == "/Tags/") {
-                    titlePrefix = "[Tag] "
-                }
-            }
-
             if (itemLocation.length > 1) {
                 itemLocation = itemLocation.slice(0, -1).replace(/\//g, " > ")
             } else {
                 itemLocation = ""
             }
-            item["type"] = "file"
-            item["title"] = titlePrefix + itemName
-            item["score"] = itemScore
+
+            item["type"] = "file:skipcheck"
+            item["title"] = itemName
             item["arg"] = itemPath
+
+            // ignore group
+            if (record.type() == 'group') {
+                if (filterOutGroup == "yes") { continue }
+
+                item["type"] = "default"
+                // group 的 path() 为空，但是 item["arg"] 为空时 Alfred 不可执行后续动作
+                // 故以应用路径代替
+                item["arg"] = "/Applications/DEVONthink Pro.app"
+                item["title"] = "[Group] " + itemName
+                if (itemLocation == "/Tags/") {
+                    item["title"] = "[Tag] " + itemName
+                }
+            }
+
+            item["score"] = itemScore
             item["subtitle"] = "📂 " + record.database().name() + " " + itemLocation
             item["icon"] = { "type": "fileicon", "path": itemPath }
 
