@@ -32,9 +32,13 @@ There are two editions:
 
 After documents were listed,
 
-- Press `Enter` to open the selected result with DEVONthink.
-- Press `⌘Command + Enter` to open with external editor. 
+- Press `Enter` to open the selected file with external editor.
+- Press `⌘Command + Enter` to open with DEVONthink.
 - Press `⌥Option + Enter` to reveal result in DEVONthink.
+- Press `→`, `fn`, etc. to show file actions of Alfred. The keys are set in `Features → File Search → Actions` of Alfred Preferences.
+- Press `Shift` or `⌘Command + Y` to `QuickLook` the selected file.
+- Press `⌘Command + C` to copy DEVONthink link (x-devonthink-item://xxxx) of the selected file.
+- Drag & Drop file in the result list to wherever you want.
 
 ![Enter](https://user-images.githubusercontent.com/3690653/48790940-73625180-ed2b-11e8-89dc-6bf4f6b9e72a.png)
 
@@ -56,11 +60,15 @@ After documents were listed,
 
 You can set environment variable `filterOutGroup` to `yes` if you want to filter out group and tag.
 
+### Automation permission in macOS Mojave
+
+Alfred will ask for Automation permission to control DEVONthink when you run the workflow for the first time. You should check up permission of Alfred controlling DEVONthink in `System Preferences → Security & Privacy → Privacy → Automation` if the workflow doesn't work.
+
 ## Known issues
 
-CJK (Chinese, Japanese, and Korean) characters should be added `~` in the front when seaching in DEVONthink. For example, searching keywords `你abc我他` should be converted to `~你abc~我他`. It's added automatically in `DEVONthink Pro Search` by using regular expression `/(\p{Unified_Ideograph}+)/ug` to matching Chinese characters.
+CJK (Chinese, Japanese, and Korean) characters should be added `~` in the front when seaching in DEVONthink. For example, searching keywords `你abc我他` should be converted to `~你abc~我他`. It's added automatically in `DEVONthink Pro Search` by using regular expression `/([\u4e00-\u9fff]+)/g` to matching Chinese characters.
 
-The regular expression `/(\p{Unified_Ideograph}+)/ug` can't match Japanese or Korean characters. You can research more perfect regular expressions which match CJK and tell me.
+The regular expression can't match Japanese or Korean characters. You can research more perfect regular expressions which match CJK and tell me.
 
 
 ## Todo

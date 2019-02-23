@@ -30,11 +30,15 @@
     - 按 `⌘Command + 回车` 列出该数据库中的所有标签（Tag）。选择某个标签，然后按下回车键，可列出所有附有该标签的文档。
 - 输入 `dnm + 标签1, 标签2, ……`，列出所有数据库中同时附有这些标签的文档。多个标签以英文逗号分隔。**注意：标签必须是准确完整的，如标签“aBcD”，不能输入“aBc”，不能输入“abcd”。**
 
-显示文档列表后，
+显示结果列表后，
 
-* 按下 `回车` ，用 DEVONthink 打开所选文件。
-* 按下 `⌘Command + 回车` 用外部程序（系统默认）打开所选文件。
+* 按下 `回车` 用外部程序（系统默认）打开所选文件。
+* 按下 `⌘Command + 回车` 用 DEVONthink 打开所选文件。
 * 按下 `⌥Option + 回车` 在 DEVONthink 窗口中显示所选文件。
+* 按下 `→` 或 `fn` 等，显示 Alfred 文件动作。可以在 Alfred 设置里 `Features → File Search → Actions` 中查看或修改按键。
+* 按下 `Shift` 或 `⌘Command + Y` 可以预览（QuickLook）当前选中的文件。
+* 按下 `⌘Command + C` 复制当前选中的文件在 DEVONthink 中的链接（x-devonthink-item://xxxx）。
+* 直接拖拽列表中的文件，复制到你需要的地方。
 
 ![按下回车后效果](https://user-images.githubusercontent.com/3690653/48790940-73625180-ed2b-11e8-89dc-6bf4f6b9e72a.png)
 
@@ -58,9 +62,12 @@
 
 如果你想在 `dnt` 的搜索结果中滤除文件夹和表情，可以设置 `filterOutGroup` 为 `yes`。
 
+### macOS Mojave 上的权限问题
+
+需确保 `系统偏好设置 → 安全性与隐私 → 隐私 → 自动化` 中，Alfred 拥有控制 DEVONthink 的权限。一般情况下，第一次运行该 Workflow 时，会弹窗申请该权限，授权即可。如果始终无法正常搜索，可检查该权限设置。
 
 ## 存在的问题
 
-在 DEVONthink 中搜索，关键词中的 CJK 文字（中国、日本、韩国）需要在其前面加上`~`。如搜索`你abc我他`，需改为`~你abc~我他`。在 DEVONthink Pro Search 中，已使用正则表达式 `/(\p{Unified_Ideograph}+)/ug` 匹配中文字符以自动添加`~`。
+在 DEVONthink 中搜索，关键词中的 CJK 文字（中国、日本、韩国）需要在其前面加上`~`。如搜索`你abc我他`，需改为`~你abc~我他`。在 DEVONthink Pro Search 中，已使用正则表达式 `/([\u4e00-\u9fff]+)/g` 匹配中文字符以自动添加`~`。
 
 但是该正则表达式无法匹配日韩文字。如果你遇到日韩文字搜索问题，可自行研究解决。
