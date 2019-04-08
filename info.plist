@@ -77,6 +77,21 @@
 				<false/>
 			</dict>
 		</array>
+		<key>BF865B9C-F658-4400-B041-6F7296568A95</key>
+		<array/>
+		<key>D6ABA7EA-3611-44D1-9507-5160C1033D88</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BF865B9C-F658-4400-B041-6F7296568A95</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>F904A209-781E-466D-9D44-734E14812CC4</key>
 		<array>
 			<dict>
@@ -154,6 +169,62 @@
 	<string>DEVONthink Pro Search</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>echo "$1" | perl -CIOED -p -e 's/(\p{Block=CJK_Unified_Ideographs}+)/ ~\1 /g' | pbcopy
+
+AScommand=$(cat&lt;&lt;EOF
+tell application "DEVONthink Pro" to activate
+tell application "System Events"
+    keystroke "f" using {command down, shift down}
+    tell application "System Events" to keystroke "v" using command down
+    delay 0.1
+    key code 36
+end tell
+EOF)
+
+osascript -e "$AScommand"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BF865B9C-F658-4400-B041-6F7296568A95</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>dnts</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Search in DEVONthink Window</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D6ABA7EA-3611-44D1-9507-5160C1033D88</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -487,6 +558,13 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<key>ypos</key>
 			<integer>180</integer>
 		</dict>
+		<key>BF865B9C-F658-4400-B041-6F7296568A95</key>
+		<dict>
+			<key>xpos</key>
+			<integer>540</integer>
+			<key>ypos</key>
+			<integer>40</integer>
+		</dict>
 		<key>C1A38576-ABC5-4202-BC67-0921672A8568</key>
 		<dict>
 			<key>note</key>
@@ -504,6 +582,13 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<integer>810</integer>
 			<key>ypos</key>
 			<integer>350</integer>
+		</dict>
+		<key>D6ABA7EA-3611-44D1-9507-5160C1033D88</key>
+		<dict>
+			<key>xpos</key>
+			<integer>270</integer>
+			<key>ypos</key>
+			<integer>40</integer>
 		</dict>
 		<key>F904A209-781E-466D-9D44-734E14812CC4</key>
 		<dict>
