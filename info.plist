@@ -41,11 +41,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>2D684BD7-1242-42F0-8AA4-C968A5285FD5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>463F4584-47AD-4B3E-B822-3D194043A268</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>FD00A4FC-B807-4081-8AB4-9AEAC5EC2525</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8C14689F-1120-4E3C-9F18-CAF004A01508</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>14E972F8-F5D6-48D5-A7F9-C51A25612D37</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -228,53 +254,6 @@ osascript -e "$AScommand"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<true/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>keyword</key>
-				<string>dnd</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>/usr/bin/osascript -l JavaScript getDbList.js</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Choose Database to Search in</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>openwith</key>
 				<string></string>
 				<key>sourcefile</key>
@@ -346,7 +325,9 @@ osascript -e "$AScommand"</string>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
-				<integer>0</integer>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>dnd</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -358,24 +339,52 @@ osascript -e "$AScommand"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python getTagsList.py</string>
+				<string>/usr/bin/osascript -l JavaScript getDbList.js</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>getTagsList.py</string>
+				<string></string>
 				<key>subtext</key>
-				<string>{var:selectedDbName}</string>
+				<string></string>
 				<key>title</key>
-				<string>List all Tags</string>
+				<string>Choose Database to Search in</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</string>
+			<string>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+    var query = argv[0];
+    const DNt = Application('DEVONthink Pro');
+	DNt.activate()
+    DNt.openWindowFor({ record: DNt.getRecordWithUuid(query) })
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -427,52 +436,45 @@ osascript -e "$AScommand"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
 				<key>escaping</key>
-				<integer>68</integer>
+				<integer>0</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
 				<key>script</key>
-				<string>function run(argv) {
-    var query = argv[0];
-    const DNt = Application('DEVONthink Pro');
-	DNt.activate()
-    DNt.openWindowFor({ record: DNt.getRecordWithUuid(query) })
-}</string>
+				<string>/usr/bin/python getTagsList.py</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>7</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string># $1: uuid
-open "x-devonthink-item://${1}?reveal=1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
+				<string>getTagsList.py</string>
+				<key>subtext</key>
+				<string>{var:selectedDbName}</string>
+				<key>title</key>
+				<string>List all Tags</string>
 				<key>type</key>
 				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>72C81C8A-AD3A-4675-A407-B01AD86F0592</string>
+			<string>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -523,17 +525,176 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string># $1: uuid
+open "x-devonthink-item://${1}?reveal=1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>72C81C8A-AD3A-4675-A407-B01AD86F0592</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run	set theQuery to "{query}"	tell application "DEVONthink Pro"		load workspace theQuery		activate	end tellend run</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>14E972F8-F5D6-48D5-A7F9-C51A25612D37</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>dnw</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/python workspace.py</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Load Workspace</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8C14689F-1120-4E3C-9F18-CAF004A01508</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>dnwa</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Save workspace named "{query}"</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2D684BD7-1242-42F0-8AA4-C968A5285FD5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run	set theQuery to "{query}"	tell application "DEVONthink Pro"		save workspace theQuery	end tellend run</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>463F4584-47AD-4B3E-B822-3D194043A268</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>14E972F8-F5D6-48D5-A7F9-C51A25612D37</key>
+		<dict>
+			<key>xpos</key>
+			<integer>550</integer>
+			<key>ypos</key>
+			<integer>630</integer>
+		</dict>
 		<key>23253F9B-2A9D-45AE-A8FA-4CF8E6FE54BF</key>
 		<dict>
 			<key>xpos</key>
 			<integer>450</integer>
 			<key>ypos</key>
 			<integer>510</integer>
+		</dict>
+		<key>2D684BD7-1242-42F0-8AA4-C968A5285FD5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>270</integer>
+			<key>ypos</key>
+			<integer>770</integer>
+		</dict>
+		<key>463F4584-47AD-4B3E-B822-3D194043A268</key>
+		<dict>
+			<key>xpos</key>
+			<integer>550</integer>
+			<key>ypos</key>
+			<integer>770</integer>
 		</dict>
 		<key>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</key>
 		<dict>
@@ -550,6 +711,13 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<integer>810</integer>
 			<key>ypos</key>
 			<integer>510</integer>
+		</dict>
+		<key>8C14689F-1120-4E3C-9F18-CAF004A01508</key>
+		<dict>
+			<key>xpos</key>
+			<integer>270</integer>
+			<key>ypos</key>
+			<integer>630</integer>
 		</dict>
 		<key>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</key>
 		<dict>
@@ -618,7 +786,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<string>filterOutGroup</string>
 	</array>
 	<key>version</key>
-	<string>5.0</string>
+	<string>6.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/mpco/AlfredWorkflow-DEVONthink-Search</string>
 </dict>
