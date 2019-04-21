@@ -199,11 +199,11 @@
 			<key>config</key>
 			<dict>
 				<key>concurrently</key>
-				<false/>
+				<true/>
 				<key>escaping</key>
-				<integer>102</integer>
+				<integer>70</integer>
 				<key>script</key>
-				<string>echo "$1" | perl -CIOED -p -e 's/(\p{Block=CJK_Unified_Ideographs}+)/ ~\1 /g' | pbcopy
+				<string>echo '{query}' | perl -CIOED -p -e 's/(\p{Block=CJK_Unified_Ideographs}+)/ ~\1 /g' | pbcopy
 
 AScommand=$(cat&lt;&lt;EOF
 tell application "DEVONthink Pro" to activate
@@ -217,7 +217,7 @@ EOF)
 
 osascript -e "$AScommand"</string>
 				<key>scriptargtype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
@@ -240,7 +240,7 @@ osascript -e "$AScommand"</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
-				<string>Search in DEVONthink Window</string>
+				<string>Search in DEVONthink Search Window</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
