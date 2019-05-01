@@ -98,7 +98,7 @@
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Enter to list all Tags in the database</string>
+				<string>Press Enter to list all Tags in the database</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
