@@ -5,7 +5,6 @@
 # 多个 tag 匹配
 
 import os
-import sys
 import json
 import ast
 import shlex
@@ -28,4 +27,8 @@ for tag in tagList:
         "variables": {"selectedTag": tag, "selectedDbUUID": selectedDbUUID}
     })
 
-sys.stdout.write(json.dumps(result))
+if result['items']:
+    print(json.dumps(result))
+else:
+    # when result list is empty
+    print('{"items": [{"title": "None Tag","subtitle": "(*´･д･)?"}]}')
