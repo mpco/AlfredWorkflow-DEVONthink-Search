@@ -25,10 +25,14 @@ There are two editions:
 ## Usage
 
 - Type `dnt + keywords` to search in all opened databases. 
+- Type `dnts + keywords` to search in **Search Window** of DNtp.
 - Type `dnd` to choose which datebase to search
     - Press `Enter`, then type in `keywords` to search in the chosen database. 
     - Press `⌘Command + Enter` to list all tags in the database, then choose a tag and press `Enter` to list all documents which have the tag.
 - Type `dnm + tag1, tag2, ...` to list all documents which have these tags in all database. **Tags inputed must be exact. For example, Tag `aBcD` can't be inputed as `aBc` or `abcd`**
+- Actions for Workspace:
+    - Type `dnw` to list all workspaces, press `Enter` to load the selected workspace.
+    - Type `dnwa + WorkspaceName` to save current workspace named `WorkspaceName`.
 
 After documents were listed,
 
@@ -69,8 +73,3 @@ Alfred will ask for Automation permission to control DEVONthink when you run the
 CJK (Chinese, Japanese, and Korean) characters should be added `~` in the front when seaching in DEVONthink. For example, searching keywords `你abc我他` should be converted to `~你abc~我他`. It's added automatically in `DEVONthink Pro Search` by using regular expression `/([\u4e00-\u9fff]+)/g` to matching Chinese characters.
 
 The regular expression can't match Japanese or Korean characters. You can research more perfect regular expressions which match CJK and tell me.
-
-
-## Todo
-
-1. get unread records.
