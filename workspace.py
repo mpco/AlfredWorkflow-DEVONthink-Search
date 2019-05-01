@@ -5,7 +5,7 @@ import json
 import shlex
 import subprocess
 
-cmdScript = "osascript -e 'tell application \"DEVONthink Pro\" to get workspaces' -s s"
+cmdScript = "osascript -e 'tell application \"DEVONthink 3\" to get workspaces' -s s"
 cmdList = shlex.split(cmdScript)
 cmdResult = subprocess.check_output(cmdList)
 workspaceList = ast.literal_eval(

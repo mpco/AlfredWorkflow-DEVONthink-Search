@@ -1,6 +1,6 @@
 'use strict';
 function run() {
-    var DNt = Application("DEVONthink Pro");
+    var DNt = Application("DEVONthink 3");
     var allDB = DNt.databases
     var allResult = []
     for (var db in allDB) {

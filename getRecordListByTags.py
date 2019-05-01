@@ -16,7 +16,7 @@ if sys.argv[1] == "inputTags":
     ignoredDbUuidList = os.getenv('ignoredDbUuidList', "").split(",")
     ignoredDbUuidList = [dbUuid.strip() for dbUuid in ignoredDbUuidList]
     ignoredDbUuidListStr = "\",\"".join(ignoredDbUuidList)
-    getInfoAppleScript = """'tell application "DEVONthink Pro"
+    getInfoAppleScript = """'tell application "DEVONthink 3"
     set allDb to every database
     set allResult to ""
     set ignoredDbUuidList to {"%s"}
@@ -50,7 +50,7 @@ elif sys.argv[1] == "selectedTag":
     selectedTag = os.getenv('selectedTag', "")
     tagStr = selectedTag
     selectedDbUuid = os.getenv('selectedDbUUID', "")
-    getInfoAppleScript = """'tell application "DEVONthink Pro"
+    getInfoAppleScript = """'tell application "DEVONthink 3"
     set theDB to (get database with uuid "%s")
     set theList to lookup records with tags {"%s"} in theDB
     set theResult to ""

@@ -12,7 +12,7 @@ import subprocess
 
 selectedDbUUID = os.getenv('selectedDbUUID', "")
 
-cmdScript = "osascript -e 'tell application \"DEVONthink Pro\" to get name of tag group of (get database with uuid \"{}\")' -s s".format(selectedDbUUID)
+cmdScript = "osascript -e 'tell application \"DEVONthink 3\" to get name of tag group of (get database with uuid \"{}\")' -s s".format(selectedDbUUID)
 cmdList = shlex.split(cmdScript)
 cmdResult = subprocess.check_output(cmdList)
 tagList = ast.literal_eval(
