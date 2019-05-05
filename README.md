@@ -33,11 +33,9 @@ After documents were listed,
 
 ## Configuration
 
-**ONLY for DEVONthink Pro Search**
-
 ### `ignoredDbUuidList`: ignore databases
 
-`dnt` and `dnm` search in **all** opened databases  in `DEVONthink Pro Search`. You can ignore some databases by setting `ignoredDbUuidList` environment variable in Alfred workflow.
+`dnt` and `dnm` search in **all** opened databases. You can ignore some databases by setting `ignoredDbUuidList` environment variable in Alfred workflow.
 
 1. Copy database link in DEVONthink, which is similar to `x-devonthink-item://1FC1A542-D8CA-4807-B806-8617966870B5`.
 2. The part `1FC1A542-D8CA-4807-B806-8617966870B5` is the database's UUID.
@@ -55,6 +53,10 @@ Alfred will ask for Automation permission to control DEVONthink when you run the
 
 ## Known issues
 
-CJK (Chinese, Japanese, and Korean) characters should be added `~` in the front when seaching in DEVONthink. For example, searching keywords `你abc我他` should be converted to `~你abc~我他`. It's added automatically in `DEVONthink Pro Search` by using regular expression `/([\u4e00-\u9fff]+)/g` to matching Chinese characters.
+CJK (Chinese, Japanese, and Korean) characters should be added `~` in the front when seaching in DEVONthink. For example, searching keywords `你abc我他` should be converted to `~你abc~我他`. It's added automatically in `DEVONthink Search` by using regular expression `/([\u4e00-\u9fff]+)/g` to matching Chinese characters.
 
 The regular expression can't match Japanese or Korean characters. You can research more perfect regular expressions which match CJK and tell me.
+
+## Todo
+
+1. Support Favourite Groups.
