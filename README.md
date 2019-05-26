@@ -60,4 +60,5 @@ The regular expression can't match Japanese or Korean characters. You can resear
 ## Todo
 
 1. Support Favourite Groups.
-2. pinyin searching for Chinese
+2. Importing files.
+3. Update readme.
