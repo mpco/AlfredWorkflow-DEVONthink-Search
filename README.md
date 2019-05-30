@@ -57,8 +57,3 @@ CJK (Chinese, Japanese, and Korean) characters should be added `~` in the front 
 
 The regular expression can't match Japanese or Korean characters. You can research more perfect regular expressions which match CJK and tell me.
 
-## Todo
-
-1. Support Favourite Groups.
-2. Importing files.
-3. Update readme.
