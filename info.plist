@@ -273,6 +273,8 @@ osascript -e "$AScommand"</string>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -311,7 +313,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>F904A209-781E-466D-9D44-734E14812CC4</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -320,6 +322,8 @@ osascript -e "$AScommand"</string>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -358,7 +362,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -395,6 +399,8 @@ osascript -e "$AScommand"</string>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -431,7 +437,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>FD00A4FC-B807-4081-8AB4-9AEAC5EC2525</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -440,6 +446,8 @@ osascript -e "$AScommand"</string>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -476,7 +484,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -485,6 +493,8 @@ osascript -e "$AScommand"</string>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -523,7 +533,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>23253F9B-2A9D-45AE-A8FA-4CF8E6FE54BF</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -579,6 +589,8 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -617,7 +629,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<key>uid</key>
 			<string>8C14689F-1120-4E3C-9F18-CAF004A01508</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
