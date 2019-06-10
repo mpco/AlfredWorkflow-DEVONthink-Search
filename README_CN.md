@@ -33,6 +33,7 @@
 - Workspace 相关动作:
     - 输入 `dnw` 列出所有 Workspace，按下`回车`加载所选项。
     - 输入 `dnwa + 名称` 将当前窗口布局保存为 Workspace 并命名。
+- 输入 `dnf` 列出收藏。
 
 显示结果列表后，
 

@@ -33,6 +33,7 @@ There are two editions:
 - Actions for Workspace:
     - Type `dnw` to list all workspaces, press `Enter` to load the selected workspace.
     - Type `dnwa + WorkspaceName` to save current workspace named `WorkspaceName`.
+- Type `dnf` to list favorites.
 
 After documents were listed,
 
