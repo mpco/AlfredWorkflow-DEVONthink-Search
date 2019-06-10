@@ -82,6 +82,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>906ADF41-40AD-4C44-A872-DA6D4A3FDA39</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</key>
 		<array>
 			<dict>
@@ -657,6 +670,55 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>dnf</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/python getFavorites.py</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>List Favorites</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>906ADF41-40AD-4C44-A872-DA6D4A3FDA39</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -778,9 +840,9 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<key>14E972F8-F5D6-48D5-A7F9-C51A25612D37</key>
 		<dict>
 			<key>xpos</key>
-			<integer>570</integer>
+			<integer>550</integer>
 			<key>ypos</key>
-			<integer>855</integer>
+			<integer>965</integer>
 		</dict>
 		<key>23253F9B-2A9D-45AE-A8FA-4CF8E6FE54BF</key>
 		<dict>
@@ -792,16 +854,16 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<key>2D684BD7-1242-42F0-8AA4-C968A5285FD5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>290</integer>
+			<integer>270</integer>
 			<key>ypos</key>
-			<integer>995</integer>
+			<integer>1105</integer>
 		</dict>
 		<key>463F4584-47AD-4B3E-B822-3D194043A268</key>
 		<dict>
 			<key>xpos</key>
-			<integer>570</integer>
+			<integer>550</integer>
 			<key>ypos</key>
-			<integer>995</integer>
+			<integer>1105</integer>
 		</dict>
 		<key>47CC5D06-A175-47C9-A53A-5D24BC92CD4A</key>
 		<dict>
@@ -829,9 +891,16 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<key>8C14689F-1120-4E3C-9F18-CAF004A01508</key>
 		<dict>
 			<key>xpos</key>
-			<integer>290</integer>
+			<integer>270</integer>
 			<key>ypos</key>
-			<integer>855</integer>
+			<integer>965</integer>
+		</dict>
+		<key>906ADF41-40AD-4C44-A872-DA6D4A3FDA39</key>
+		<dict>
+			<key>xpos</key>
+			<integer>275</integer>
+			<key>ypos</key>
+			<integer>820</integer>
 		</dict>
 		<key>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</key>
 		<dict>
@@ -907,7 +976,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<string>filterOutGroup</string>
 	</array>
 	<key>version</key>
-	<string>7.2</string>
+	<string>7.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/mpco/AlfredWorkflow-DEVONthink-Search</string>
 </dict>
