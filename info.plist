@@ -54,6 +54,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>47CC5D06-A175-47C9-A53A-5D24BC92CD4A</key>
+		<array/>
 		<key>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</key>
 		<array>
 			<dict>
@@ -114,6 +116,16 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>47CC5D06-A175-47C9-A53A-5D24BC92CD4A</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Search in existing window</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -203,19 +215,13 @@
 				<key>escaping</key>
 				<integer>70</integer>
 				<key>script</key>
-				<string>echo '{query}' | perl -CIOED -p -e 's/(\p{Block=CJK_Unified_Ideographs}+)/ ~\1 /g' | pbcopy
-
-AScommand=$(cat&lt;&lt;EOF
-tell application "DEVONthink 3" to activatetell application "System Events"	keystroke "n" using {command down, option down}	keystroke "f" using {command down, option down}	tell application "System Events" to keystroke "v" using command down	delay 0.1	key code 36end tell
-EOF)
-
-osascript -e "$AScommand"</string>
+				<string>on run argv	set theQuery to item 1 of argv	set theNewQuery to (do shell script "echo '" &amp; theQuery &amp; "' | perl -CIOED -p -e 's/(\\p{Block=CJK_Unified_Ideographs}+)/ ~\\1 /g'")	tell application "DEVONthink 3" to activate	tell application "System Events" to tell process "DEVONthink 3"		keystroke "n" using {command down, option down} -- open new window		set focused of text field 1 of group 3 of toolbar 1 of window 1 to true -- focus on search field		set value of text field 1 of group 3 of toolbar 1 of window 1 to theNewQuery		delay 0.1		keystroke return	end tellend run</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>6</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -248,6 +254,29 @@ osascript -e "$AScommand"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv	set theQuery to item 1 of argv	set theNewQuery to (do shell script "echo '" &amp; theQuery &amp; "' | perl -CIOED -p -e 's/(\\p{Block=CJK_Unified_Ideographs}+)/ ~\\1 /g'")	tell application "DEVONthink 3"		activate		set theViewerWinIndex to false as boolean		repeat with x from 1 to (count windows)			if class of window x is viewer window then				set theViewerWinIndex to x				exit repeat			end if		end repeat		tell application "System Events" to tell process "DEVONthink 3"			if theViewerWinIndex is false then				keystroke "n" using {command down, option down}			end if			perform action "AXRaise" of window theViewerWinIndex			set focused of text field 1 of group 3 of toolbar 1 of window 1 to true			set value of text field 1 of group 3 of toolbar 1 of window 1 to theNewQuery			delay 0.1			keystroke return		end tell	end tellend run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>47CC5D06-A175-47C9-A53A-5D24BC92CD4A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>openwith</key>
 				<string></string>
 				<key>sourcefile</key>
@@ -267,6 +296,8 @@ osascript -e "$AScommand"</string>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -305,7 +336,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>F904A209-781E-466D-9D44-734E14812CC4</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -314,6 +345,8 @@ osascript -e "$AScommand"</string>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -352,7 +385,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -389,6 +422,8 @@ osascript -e "$AScommand"</string>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -425,7 +460,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>FD00A4FC-B807-4081-8AB4-9AEAC5EC2525</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -434,6 +469,8 @@ osascript -e "$AScommand"</string>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -470,7 +507,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -479,6 +516,8 @@ osascript -e "$AScommand"</string>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -517,7 +556,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>23253F9B-2A9D-45AE-A8FA-4CF8E6FE54BF</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -573,6 +612,8 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -611,7 +652,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<key>uid</key>
 			<string>8C14689F-1120-4E3C-9F18-CAF004A01508</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -665,106 +706,113 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<key>14E972F8-F5D6-48D5-A7F9-C51A25612D37</key>
 		<dict>
 			<key>xpos</key>
-			<integer>550</integer>
+			<integer>555</integer>
 			<key>ypos</key>
-			<integer>630</integer>
+			<integer>715</integer>
 		</dict>
 		<key>23253F9B-2A9D-45AE-A8FA-4CF8E6FE54BF</key>
 		<dict>
 			<key>xpos</key>
-			<integer>450</integer>
+			<integer>455</integer>
 			<key>ypos</key>
-			<integer>510</integer>
+			<integer>595</integer>
 		</dict>
 		<key>2D684BD7-1242-42F0-8AA4-C968A5285FD5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>275</integer>
 			<key>ypos</key>
-			<integer>770</integer>
+			<integer>855</integer>
 		</dict>
 		<key>463F4584-47AD-4B3E-B822-3D194043A268</key>
 		<dict>
 			<key>xpos</key>
-			<integer>550</integer>
+			<integer>555</integer>
 			<key>ypos</key>
-			<integer>770</integer>
+			<integer>855</integer>
+		</dict>
+		<key>47CC5D06-A175-47C9-A53A-5D24BC92CD4A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>815</integer>
+			<key>ypos</key>
+			<integer>135</integer>
 		</dict>
 		<key>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</key>
 		<dict>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>275</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>435</integer>
 		</dict>
 		<key>72C81C8A-AD3A-4675-A407-B01AD86F0592</key>
 		<dict>
 			<key>note</key>
 			<string>Reveal in DEVONthink</string>
 			<key>xpos</key>
-			<integer>810</integer>
+			<integer>815</integer>
 			<key>ypos</key>
-			<integer>510</integer>
+			<integer>595</integer>
 		</dict>
 		<key>8C14689F-1120-4E3C-9F18-CAF004A01508</key>
 		<dict>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>275</integer>
 			<key>ypos</key>
-			<integer>630</integer>
+			<integer>715</integer>
 		</dict>
 		<key>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</key>
 		<dict>
 			<key>xpos</key>
-			<integer>60</integer>
+			<integer>65</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>265</integer>
 		</dict>
 		<key>BF865B9C-F658-4400-B041-6F7296568A95</key>
 		<dict>
 			<key>xpos</key>
-			<integer>540</integer>
+			<integer>815</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>15</integer>
 		</dict>
 		<key>C1A38576-ABC5-4202-BC67-0921672A8568</key>
 		<dict>
 			<key>note</key>
 			<string>Open With External Editor</string>
 			<key>xpos</key>
-			<integer>810</integer>
+			<integer>815</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>265</integer>
 		</dict>
 		<key>C7CBFA98-7135-4918-9F96-C7E039CE2C34</key>
 		<dict>
 			<key>note</key>
 			<string>Open with DEVONthink</string>
 			<key>xpos</key>
-			<integer>810</integer>
+			<integer>815</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>435</integer>
 		</dict>
 		<key>D6ABA7EA-3611-44D1-9507-5160C1033D88</key>
 		<dict>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>275</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>135</integer>
 		</dict>
 		<key>F904A209-781E-466D-9D44-734E14812CC4</key>
 		<dict>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>275</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>265</integer>
 		</dict>
 		<key>FD00A4FC-B807-4081-8AB4-9AEAC5EC2525</key>
 		<dict>
 			<key>xpos</key>
-			<integer>450</integer>
+			<integer>455</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>435</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -780,7 +828,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<string>filterOutGroup</string>
 	</array>
 	<key>version</key>
-	<string>7.0</string>
+	<string>7.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/mpco/AlfredWorkflow-DEVONthink-Search</string>
 </dict>
