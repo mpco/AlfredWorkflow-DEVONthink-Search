@@ -9,15 +9,20 @@ For DEVONthink 2.x, you can use the versions of this workflow before V7.0. Switc
 
 ## Usage
 
-- Type `dnt + keywords` to search in all opened databases in Alfred. 
+- Type `dnt + keywords` to search in all opened databases in Alfred. **Search results are sorted by relevance score, consistent with DEVONthink.**
 - Type `dnts + keywords` to search in DEVONthink window.
+    - Press `Enter` to search in new window. 
+    - Press `⌘Command + Enter` to search in existing window.
 - Type `dnd` to choose which datebase to search
     - Press `Enter`, then type in `keywords` to search in the chosen database. 
     - Press `⌘Command + Enter` to list all tags in the database, then choose a tag and press `Enter` to list all documents which have the tag.
+    - Press `⌥Option + Enter` to list smart groups in the chosen database.
 - Type `dnm + tag1, tag2, ...` to list all documents which have these tags in all database. **Tags inputed must be exact. For example, Tag `aBcD` can't be inputed as `aBc` or `abcd`**
 - Actions for Workspace:
     - Type `dnw` to list all workspaces, press `Enter` to load the selected workspace.
     - Type `dnwa + WorkspaceName` to save current workspace named `WorkspaceName`.
+- Type `dnf` to list favorites.
+- Type `dnsg` to list all smart groups in all opened databases.
 
 After documents were listed,
 
