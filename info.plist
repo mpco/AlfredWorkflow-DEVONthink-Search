@@ -104,6 +104,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F781EE2B-548D-4744-8E2B-8847C74E35F3</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Press Enter to list all SmartGroups in the database</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>BF865B9C-F658-4400-B041-6F7296568A95</key>
 		<array/>
@@ -126,6 +136,19 @@
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>Search in existing window</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F781EE2B-548D-4744-8E2B-8847C74E35F3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C7CBFA98-7135-4918-9F96-C7E039CE2C34</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -233,27 +256,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>dnts</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Search in DEVONthink Window</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>D6ABA7EA-3611-44D1-9507-5160C1033D88</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -273,6 +275,27 @@
 			<string>47CC5D06-A175-47C9-A53A-5D24BC92CD4A</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>dnts</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Search in DEVONthink Window</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D6ABA7EA-3611-44D1-9507-5160C1033D88</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -585,6 +608,55 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>dnsg</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/osascript -l JavaScript getSmartGroupList.js</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:selectedDbName}</string>
+				<key>title</key>
+				<string>List Smart Group</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F781EE2B-548D-4744-8E2B-8847C74E35F3</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -706,9 +778,9 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<key>14E972F8-F5D6-48D5-A7F9-C51A25612D37</key>
 		<dict>
 			<key>xpos</key>
-			<integer>555</integer>
+			<integer>570</integer>
 			<key>ypos</key>
-			<integer>715</integer>
+			<integer>855</integer>
 		</dict>
 		<key>23253F9B-2A9D-45AE-A8FA-4CF8E6FE54BF</key>
 		<dict>
@@ -720,16 +792,16 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<key>2D684BD7-1242-42F0-8AA4-C968A5285FD5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>275</integer>
+			<integer>290</integer>
 			<key>ypos</key>
-			<integer>855</integer>
+			<integer>995</integer>
 		</dict>
 		<key>463F4584-47AD-4B3E-B822-3D194043A268</key>
 		<dict>
 			<key>xpos</key>
-			<integer>555</integer>
+			<integer>570</integer>
 			<key>ypos</key>
-			<integer>855</integer>
+			<integer>995</integer>
 		</dict>
 		<key>47CC5D06-A175-47C9-A53A-5D24BC92CD4A</key>
 		<dict>
@@ -757,9 +829,9 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<key>8C14689F-1120-4E3C-9F18-CAF004A01508</key>
 		<dict>
 			<key>xpos</key>
-			<integer>275</integer>
+			<integer>290</integer>
 			<key>ypos</key>
-			<integer>715</integer>
+			<integer>855</integer>
 		</dict>
 		<key>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</key>
 		<dict>
@@ -800,6 +872,13 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<key>ypos</key>
 			<integer>135</integer>
 		</dict>
+		<key>F781EE2B-548D-4744-8E2B-8847C74E35F3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>275</integer>
+			<key>ypos</key>
+			<integer>690</integer>
+		</dict>
 		<key>F904A209-781E-466D-9D44-734E14812CC4</key>
 		<dict>
 			<key>xpos</key>
@@ -828,7 +907,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<string>filterOutGroup</string>
 	</array>
 	<key>version</key>
-	<string>7.1</string>
+	<string>7.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/mpco/AlfredWorkflow-DEVONthink-Search</string>
 </dict>
