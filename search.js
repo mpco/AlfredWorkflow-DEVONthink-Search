@@ -52,6 +52,8 @@ function run(argv) {
             var itemUUID = record.uuid()
 
             if (itemLocation.length > 1) {
+                // 不是在根目录中，比如在文件夹 a/b 中，itemLocation 为 /a/b/，然后修改为 > a > b
+                // 之后结合所在的数据库名称，显示为 db > a > b
                 itemLocation = itemLocation.slice(0, -1).replace(/\//g, " > ")
             } else {
                 itemLocation = ""
@@ -70,7 +72,7 @@ function run(argv) {
                 // 故以应用路径代替
                 item["arg"] = "/Applications/DEVONthink Pro.app"
                 item["title"] = "[Group] " + itemName
-                if (itemLocation == "/Tags/") {
+                if (record.location() == "/Tags/") {
                     item["title"] = "[Tag] " + itemName
                 }
             }

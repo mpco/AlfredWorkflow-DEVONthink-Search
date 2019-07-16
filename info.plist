@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string>com.mpco.DEVONthinkProSearch</string>
-	<key>category</key>
-	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
 		<key>23253F9B-2A9D-45AE-A8FA-4CF8E6FE54BF</key>
@@ -122,11 +120,21 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>BF865B9C-F658-4400-B041-6F7296568A95</string>
+				<string>1A2A3CA1-51C1-4F98-9AC4-6CEC0BE9BA13</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>BF865B9C-F658-4400-B041-6F7296568A95</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>In new window</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -201,7 +209,7 @@
 	<key>createdby</key>
 	<string>Charles Ma</string>
 	<key>description</key>
-	<string>Powerful tool for searching in DEVONthink Pro / Pro Office</string>
+	<string>Powerful tool for searching in DEVONthink Pro / Pro Office 2.x</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -212,25 +220,14 @@
 			<key>config</key>
 			<dict>
 				<key>concurrently</key>
-				<true/>
+				<false/>
 				<key>escaping</key>
 				<integer>70</integer>
 				<key>script</key>
-				<string>echo '{query}' | perl -CIOED -p -e 's/(\p{Block=CJK_Unified_Ideographs}+)/ ~\1 /g' | pbcopy
-
-AScommand=$(cat&lt;&lt;EOF
-tell application "DEVONthink Pro" to activate
-tell application "System Events"
-    keystroke "f" using {command down, shift down}
-    tell application "System Events" to keystroke "v" using command down
-    delay 0.1
-    key code 36
-end tell
-EOF)
-
-osascript -e "$AScommand"</string>
+				<string>queryStr=$(echo -n "$1" | perl -CIOED -p -e 's/(\p{Block=CJK_Unified_Ideographs}+)/ ~\1 /g')
+open "x-devonthink://search?query=${queryStr}"</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
@@ -239,7 +236,7 @@ osascript -e "$AScommand"</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>BF865B9C-F658-4400-B041-6F7296568A95</string>
+			<string>1A2A3CA1-51C1-4F98-9AC4-6CEC0BE9BA13</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -263,6 +260,40 @@ osascript -e "$AScommand"</string>
 			<string>D6ABA7EA-3611-44D1-9507-5160C1033D88</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>70</integer>
+				<key>script</key>
+				<string>echo -n "$1" | perl -CIOED -p -e 's/(\p{Block=CJK_Unified_Ideographs}+)/ ~\1 /g' | pbcopy -pboard find
+
+AScommand=$(cat&lt;&lt;EOF
+tell application "DEVONthink Pro" to activate
+tell application "System Events"
+	keystroke "f" using {command down, shift down}
+	delay 0.1
+	click (button 2 of window 0 of process "DEVONthink Pro")
+end tell
+EOF)
+
+osascript -e "$AScommand"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BF865B9C-F658-4400-B041-6F7296568A95</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -326,7 +357,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>F904A209-781E-466D-9D44-734E14812CC4</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -375,7 +406,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>9EEF7907-7DA3-4BE4-96A7-8A961EB449BA</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -450,7 +481,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>FD00A4FC-B807-4081-8AB4-9AEAC5EC2525</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -497,7 +528,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>51C8A684-A86B-4B87-B4F7-3EF8BF3E4681</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -546,7 +577,7 @@ osascript -e "$AScommand"</string>
 			<key>uid</key>
 			<string>23253F9B-2A9D-45AE-A8FA-4CF8E6FE54BF</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -619,7 +650,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<key>uid</key>
 			<string>615BA5A0-9308-46B0-A971-3772C450A9DF</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -629,7 +660,13 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>on run	set theQuery to "{query}"	tell application "DEVONthink Pro"		load workspace theQuery		activate	end tellend run</string>
+				<string>on run
+	set theQuery to "{query}"
+	tell application "DEVONthink Pro"
+		load workspace theQuery
+		activate
+	end tell
+end run</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -691,7 +728,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<key>uid</key>
 			<string>8C14689F-1120-4E3C-9F18-CAF004A01508</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -722,7 +759,12 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>on run	set theQuery to "{query}"	tell application "DEVONthink Pro"		save workspace theQuery	end tellend run</string>
+				<string>on run
+	set theQuery to "{query}"
+	tell application "DEVONthink Pro"
+		save workspace theQuery
+	end tell
+end run</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -748,6 +790,13 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<integer>550</integer>
 			<key>ypos</key>
 			<integer>795</integer>
+		</dict>
+		<key>1A2A3CA1-51C1-4F98-9AC4-6CEC0BE9BA13</key>
+		<dict>
+			<key>xpos</key>
+			<integer>685</integer>
+			<key>ypos</key>
+			<integer>40</integer>
 		</dict>
 		<key>23253F9B-2A9D-45AE-A8FA-4CF8E6FE54BF</key>
 		<dict>
@@ -810,9 +859,9 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<key>BF865B9C-F658-4400-B041-6F7296568A95</key>
 		<dict>
 			<key>xpos</key>
-			<integer>540</integer>
+			<integer>550</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>100</integer>
 		</dict>
 		<key>C1A38576-ABC5-4202-BC67-0921672A8568</key>
 		<dict>
@@ -867,7 +916,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<string>filterOutGroup</string>
 	</array>
 	<key>version</key>
-	<string>6.2</string>
+	<string>6.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/mpco/AlfredWorkflow-DEVONthink-Search</string>
 </dict>
