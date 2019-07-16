@@ -148,7 +148,7 @@
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Search in existing window</string>
+				<string>In new window</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -251,13 +251,14 @@
 				<key>escaping</key>
 				<integer>70</integer>
 				<key>script</key>
-				<string>on run argv	set theQuery to item 1 of argv	set theNewQuery to (do shell script "echo '" &amp; theQuery &amp; "' | perl -CIOED -p -e 's/(\\p{Block=CJK_Unified_Ideographs}+)/ ~\\1 /g'")	tell application "DEVONthink 3" to activate	tell application "System Events" to tell process "DEVONthink 3"		keystroke "n" using {command down, option down} -- open new window		set focused of text field 1 of group 3 of toolbar 1 of window 1 to true -- focus on search field		set value of text field 1 of group 3 of toolbar 1 of window 1 to theNewQuery		delay 0.1		keystroke return	end tellend run</string>
+				<string>queryStr=$(echo -n "$1" | perl -CIOED -p -e 's/(\p{Block=CJK_Unified_Ideographs}+)/ ~\1 /g')
+open "x-devonthink://search?query=${queryStr}"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>6</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -274,7 +275,7 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>on run argv	set theQuery to item 1 of argv	set theNewQuery to (do shell script "echo '" &amp; theQuery &amp; "' | perl -CIOED -p -e 's/(\\p{Block=CJK_Unified_Ideographs}+)/ ~\\1 /g'")	tell application "DEVONthink 3"		activate		set theViewerWinIndex to false as boolean		repeat with x from 1 to (count windows)			if class of window x is viewer window then				set theViewerWinIndex to x				exit repeat			end if		end repeat		tell application "System Events" to tell process "DEVONthink 3"			if theViewerWinIndex is false then				keystroke "n" using {command down, option down}			end if			perform action "AXRaise" of window theViewerWinIndex			set focused of text field 1 of group 3 of toolbar 1 of window 1 to true			set value of text field 1 of group 3 of toolbar 1 of window 1 to theNewQuery			delay 0.1			keystroke return		end tell	end tellend run</string>
+				<string>on run argv	set theQuery to item 1 of argv	set theNewQuery to (do shell script "echo '" &amp; theQuery &amp; "' | perl -CIOED -p -e 's/(\\p{Block=CJK_Unified_Ideographs}+)/ ~\\1 /g'")	tell application "DEVONthink 3" to activate	tell application "System Events" to tell process "DEVONthink 3"		keystroke "n" using {command down, option down} -- open new window		set focused of text field 1 of group 3 of toolbar 1 of window 1 to true -- focus on search field		set value of text field 1 of group 3 of toolbar 1 of window 1 to theNewQuery		delay 0.1		keystroke return	end tellend run</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -976,7 +977,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<string>filterOutGroup</string>
 	</array>
 	<key>version</key>
-	<string>7.3</string>
+	<string>7.4</string>
 	<key>webaddress</key>
 	<string>https://github.com/mpco/AlfredWorkflow-DEVONthink-Search</string>
 </dict>
