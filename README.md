@@ -11,8 +11,8 @@ For DEVONthink 2.x, you can use the versions of this workflow before V7.0. Switc
 
 - Type `dnt + keywords` to search in all opened databases in Alfred. **Search results are sorted by relevance score, consistent with DEVONthink.**
 - Type `dnts + keywords` to search in DEVONthink window.
-    - Press `Enter` to search in new window. 
-    - Press `⌘Command + Enter` to search in existing window.
+    - Press `Enter` to search in existing window.
+    - Press `⌘Command + Enter` to search in a new window. 
 - Type `dnd` to choose which datebase to search
     - Press `Enter`, then type in `keywords` to search in the chosen database. 
     - Press `⌘Command + Enter` to list all tags in the database, then choose a tag and press `Enter` to list all documents which have the tag.
