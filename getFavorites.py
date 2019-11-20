@@ -11,10 +11,11 @@ if os.path.exists(filePath):
     result = {"items": []}
     plObjList = plistlib.readPlist(filePath)
     for plobj in plObjList:
-        result["items"].append({
-            "title": plobj["Name"],
-            # "subtitle": "",
-            "arg": plobj["UUID"]})
+        if type(plobj) != str:
+            result["items"].append({
+                "title": plobj["Name"],
+                # "subtitle": "",
+                "arg": plobj["UUID"]})
     print(json.dumps(result))
 else:
     print('{"items": [{"title": "No Favorite Item","subtitle": "(*´･д･)?"}]}')
