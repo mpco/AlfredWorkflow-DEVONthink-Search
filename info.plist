@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string>com.mpco.DEVONthinkProSearch</string>
-	<key>category</key>
-	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
 		<key>23253F9B-2A9D-45AE-A8FA-4CF8E6FE54BF</key>
@@ -352,7 +350,7 @@ open "x-devonthink://search?query=${queryStr}"</string>
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
-				<string></string>
+				<string>Searching…</string>
 				<key>script</key>
 				<string>/usr/bin/osascript -l JavaScript search.js "$1"</string>
 				<key>scriptargtype</key>
