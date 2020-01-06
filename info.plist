@@ -38,6 +38,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2F0D7AF6-77D1-45C2-AB02-776F4BA590A1</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>2D684BD7-1242-42F0-8AA4-C968A5285FD5</key>
 		<array>
@@ -219,6 +229,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2F0D7AF6-77D1-45C2-AB02-776F4BA590A1</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>FD00A4FC-B807-4081-8AB4-9AEAC5EC2525</key>
 		<array>
@@ -247,6 +267,16 @@
 				<string>72C81C8A-AD3A-4675-A407-B01AD86F0592</string>
 				<key>modifiers</key>
 				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2F0D7AF6-77D1-45C2-AB02-776F4BA590A1</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -723,6 +753,30 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string># $1: uuid
+echo "${1}" | pbcopy</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2F0D7AF6-77D1-45C2-AB02-776F4BA590A1</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -910,6 +964,15 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<integer>270</integer>
 			<key>ypos</key>
 			<integer>1105</integer>
+		</dict>
+		<key>2F0D7AF6-77D1-45C2-AB02-776F4BA590A1</key>
+		<dict>
+			<key>note</key>
+			<string>Copy item's MD-link</string>
+			<key>xpos</key>
+			<integer>815</integer>
+			<key>ypos</key>
+			<integer>755</integer>
 		</dict>
 		<key>463F4584-47AD-4B3E-B822-3D194043A268</key>
 		<dict>
