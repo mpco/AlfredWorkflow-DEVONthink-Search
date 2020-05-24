@@ -7,8 +7,9 @@ import json
 
 filePath = os.path.expanduser("~/Library/Application Support/DEVONthink 3/Favorites.plist")
 
+result = {"items": []}
+
 if os.path.exists(filePath):
-    result = {"items": []}
     plObjList = plistlib.readPlist(filePath)
     for plobj in plObjList:
         if "UUID" in plobj:
@@ -20,6 +21,7 @@ if os.path.exists(filePath):
             pass
             # when favourite item is a db, plobj has keys: alias, date, path
             # alias can be read by 'plobj["Alias"].data'
+if result["items"]:
     print(json.dumps(result))
 else:
     print('{"items": [{"title": "No Favorite Item","subtitle": "(*´･д･)?"}]}')
