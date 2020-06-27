@@ -57,8 +57,3 @@ You can set environment variable `filterOutGroup` to `yes` if you want to filter
 Alfred will ask for Automation permission to control DEVONthink when you run the workflow for the first time. You should check up permission of Alfred controlling DEVONthink in `System Preferences → Security & Privacy → Privacy → Automation` if the workflow doesn't work.
 
 ## Known issues
-
-CJK (Chinese, Japanese, and Korean) characters should be added `~` in the front when seaching in DEVONthink. For example, searching keywords `你abc我他` should be converted to `~你abc~我他`. It's added automatically in `DEVONthink Search` by using regular expression `/([\u4e00-\u9fff]+)/g` to matching Chinese characters.
-
-The regular expression can't match Japanese or Korean characters. You can research more perfect regular expressions which match CJK and tell me.
-
