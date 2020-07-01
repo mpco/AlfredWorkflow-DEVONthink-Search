@@ -336,9 +336,11 @@ open "x-devonthink://search?query=${queryStr}"</string>
 			<key>config</key>
 			<dict>
 				<key>action</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>argument</key>
-				<integer>0</integer>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>dnt </string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
