@@ -22,7 +22,7 @@ function run(argv) {
 
     // get $query, strip space, convert '你abc我他' to '~你abc~我他'
     // const cjkRegex = /(\p{Unified_Ideograph}+)/ug
-    const cjkRegex = /([\u4e00-\u9fff]+)/g
+    const cjkRegex = /([\u1100-\u11ff\u2e80-\u9fff\uac00-\ud7ff\uff00-\uffef]+)/ug;
     const query = argv[0].replace(/^\s+|\s+$/g, '').replace(cjkRegex, "~$1");
     var DNt = Application("DEVONthink 3");
     var allDB = DNt.databases
