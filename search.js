@@ -91,7 +91,8 @@ function run(argv) {
             item["mods"] = {
                 "cmd": { "valid": true, "arg": itemUUID, "subtitle": "🏷 " + itemTagStr },
                 "alt": { "valid": true, "arg": itemUUID, "subtitle": "Reveal in DEVONthink" },
-                "cmd+alt": { "valid": true, "arg": argv[0], "subtitle": "Search in DEVONthink App" }
+                "cmd+alt": { "valid": true, "arg": argv[0], "subtitle": "Search in DEVONthink App" },
+                "shift": {'valid': true, "arg": "[" + itemName + "]" + "(x-devonthink-item://" + itemUUID + ")", "subtitle": "Copy Markdown Link"}
             }
             item["text"] = {
                 "copy": "x-devonthink-item://" + itemUUID,

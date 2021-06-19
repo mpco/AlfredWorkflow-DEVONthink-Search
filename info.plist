@@ -38,6 +38,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C6E00CBA-534C-4419-B0DD-BC5C514547F8</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Copy Markdown Link</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>2D684BD7-1242-42F0-8AA4-C968A5285FD5</key>
 		<array>
@@ -219,6 +229,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C6E00CBA-534C-4419-B0DD-BC5C514547F8</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Copy Markdown Link</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>FD00A4FC-B807-4081-8AB4-9AEAC5EC2525</key>
 		<array>
@@ -249,6 +269,16 @@
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C6E00CBA-534C-4419-B0DD-BC5C514547F8</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Copy Markdown Link</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -725,6 +755,25 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>C6E00CBA-534C-4419-B0DD-BC5C514547F8</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -986,6 +1035,13 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 			<integer>815</integer>
 			<key>ypos</key>
 			<integer>265</integer>
+		</dict>
+		<key>C6E00CBA-534C-4419-B0DD-BC5C514547F8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>815</integer>
+			<key>ypos</key>
+			<integer>755</integer>
 		</dict>
 		<key>C7CBFA98-7135-4918-9F96-C7E039CE2C34</key>
 		<dict>

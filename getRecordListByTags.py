@@ -108,7 +108,8 @@ for itemInfoStr in infoList:
         "icon": {"type": "fileicon", "path": itemPath},
         "mods": {
             "cmd": {"valid": True, "arg": itemUUID, "subtitle": "🏷 " + ", ".join(itemTagList)},
-            "alt": {"valid": True, "arg": itemUUID, "subtitle": "Reveal in DEVONthink"}
+            "alt": {"valid": True, "arg": itemUUID, "subtitle": "Reveal in DEVONthink"},
+            "shift": {"valid": True, "arg": "[" + itemName + "]" + "(x-devonthink-item://" + itemUUID + ")", "subtitle": "Copy Markdown Link"}
         },
         "text": {
             "copy": "x-devonthink-item://" + itemUUID,
