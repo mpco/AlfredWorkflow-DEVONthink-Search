@@ -1,13 +1,25 @@
+<h1 align="center">DEVONthink Search</h1>
 
-# DEVONthink Search
+<h4 align="center">Powerful tool for seaching in DEVONthink 3</h4>
 
-Powerful tool for seaching in DEVONthink, for DEVONthink 3.x.
+<p align="center">
+    <a href="#">
+        <img src="https://img.shields.io/github/stars/mpco/AlfredWorkflow-DEVONthink-Search"></a>
+    <a href="https://twitter.com/intent/tweet?text=Amazing%20Alfred%20workflow:%20https://github.com/mpco/AlfredWorkflow-Recent-Documents">
+        <img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fmpco%2FAlfredWorkflow-Recent-Documents"></a>
+</p>
 
-For DEVONthink 2.x, you can use the versions of this workflow before V7.0. Switch to [Branch DEVONthink 2.x](https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/tree/DEVONthink2.x) to access the README document and source code.
+<p align="center">
+    <a href="https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/blob/master/README_CN.md">中文说明</a> •
+    <a href="https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/releases">Download</a> •
+    <a href="#how-to-use">How To Use</a> •
+    <a href="#configuration">Configuration</a>
+</p>
 
-[Download](https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/releases) [中文说明](https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/blob/master/README_CN.md)
 
-## Usage
+**NB:** For DEVONthink 2.x, you should use the versions of this workflow before V7.0. Switch to [Branch DEVONthink 2.x](https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/tree/DEVONthink2.x) to access the README document and source code.
+
+## How to Use
 
 - Type `dnt + keywords` to search in all opened databases in Alfred. **Search results are sorted by relevance score, consistent with DEVONthink.**
 - Type `dnts + keywords` to search in DEVONthink window.
@@ -29,6 +41,7 @@ After documents were listed,
 - Press `Enter` to open the selected file with external editor.
 - Press `⌘Command + Enter` to open with DEVONthink.
 - Press `⌥Option + Enter` to reveal result in DEVONthink.
+- Press `⇧Shift + Enter` to copy item's markdown link.
 - Press `→`, `fn`, etc. to show file actions of Alfred. The keys are set in `Features → File Search → Actions` of Alfred Preferences.
 - Press `Shift` or `⌘Command + Y` to `QuickLook` the selected file.
 - Press `⌘Command + C` to copy DEVONthink link (x-devonthink-item://xxxx) of the selected file.
@@ -46,7 +59,7 @@ After documents were listed,
 2. The part `1FC1A542-D8CA-4807-B806-8617966870B5` is the database's UUID.
 3. Fill in workflow configuration with UUIDs. You should separate multiple UUIDs with comma(,).
 
-![Configuration](https://user-images.githubusercontent.com/3690653/48790986-9987f180-ed2b-11e8-8f64-846d96fd26b9.png)
+<img src="https://user-images.githubusercontent.com/3690653/48790986-9987f180-ed2b-11e8-8f64-846d96fd26b9.png" width="450">
 
 ### `filterOutGroup`: filter out group and tag in searching result
 

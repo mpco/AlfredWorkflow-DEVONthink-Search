@@ -1,8 +1,8 @@
-# DEVONthink Search
+<h1 align="center">DEVONthink Search</h1>
 
-强大的 DEVONthink 搜索工具，适用于 DEVONthink 3.x 的各个版本。
+强大的 DEVONthink 搜索工具，适用于 DEVONthink 3 的各个版本。
 
-DEVONthink 2.x 请使用 7.0 之前的版本，说明文档及代码请查看[相应分支](https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/tree/DEVONthink2.x)。
+**注意：** DEVONthink 2.x 请使用 7.0 之前的版本，说明文档及代码请查看[相应分支](https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/tree/DEVONthink2.x)。
 
 [这里下载](https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/releases)
 
@@ -28,6 +28,7 @@ DEVONthink 2.x 请使用 7.0 之前的版本，说明文档及代码请查看[�
 * 按下 `回车` 用外部程序（系统默认）打开所选文件。
 * 按下 `⌘Command + 回车` 用 DEVONthink 打开所选文件。
 * 按下 `⌥Option + 回车` 在 DEVONthink 窗口中显示所选文件。
+* 按下 `⇧Shift + 回车` 复制所选文件的 Markdown 格式链接。
 * 按下 `→` 或 `fn` 等，显示 Alfred 文件动作。可以在 Alfred 设置里 `Features → File Search → Actions` 中查看或修改按键。
 * 按下 `Shift` 或 `⌘Command + Y` 可以预览（QuickLook）当前选中的文件。
 * 按下 `⌘Command + C` 复制当前选中的文件在 DEVONthink 中的链接（x-devonthink-item://xxxx）。
@@ -47,7 +48,7 @@ DEVONthink 2.x 请使用 7.0 之前的版本，说明文档及代码请查看[�
 2. 链接中的 `1FC1A542-D8CA-4807-B806-8617966870B5` 部分就是该数据库的 UUID。
 3. 如果仅屏蔽一个数据库，直接填入 UUID 即可。如果多个，则以英文逗号分隔后填入，如 `1DA1A542-D8CA-4897-B806-8627964878B5,52893041-45C2-459E-9423-C1986E783417`。
 
-![设置](https://user-images.githubusercontent.com/3690653/48790986-9987f180-ed2b-11e8-8f64-846d96fd26b9.png)
+<img src="https://user-images.githubusercontent.com/3690653/48790986-9987f180-ed2b-11e8-8f64-846d96fd26b9.png" width="450">
 
 ### `filterOutGroup`：在搜索结果中滤除文件夹和标签
 
