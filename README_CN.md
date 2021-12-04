@@ -52,7 +52,7 @@
 
 ### `filterOutGroup`：在搜索结果中滤除文件夹和标签
 
-如果你想在 `dnt` 的搜索结果中滤除文件夹和表情，可以设置 `filterOutGroup` 为 `yes`。
+如果你想在 `dnt` 的搜索结果中滤除文件夹和标签，可以设置 `filterOutGroup` 为 `yes`。
 
 ### macOS Mojave 上的权限问题
 
