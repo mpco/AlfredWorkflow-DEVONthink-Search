@@ -75,14 +75,14 @@ else:
 result = {"items": []}
 
 proc = subprocess.Popen("osascript -e " + getInfoAppleScript.strip(),
-                        stdout=subprocess.PIPE, shell=True)
+                        stdout=subprocess.PIPE, shell=True, universal_newlines=True)
 (out, err) = proc.communicate()
 
 if not out:
     print(json.dumps({"items": [{"title": "No record with the tags"}]}))
     sys.exit()
 
-# print(out)
+#print(type(out))
 
 infoList = out.strip().split("!@#!@#")[1:]
 

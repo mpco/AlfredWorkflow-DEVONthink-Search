@@ -326,7 +326,18 @@ open "x-devonthink://search?query=${queryStr}"</string>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>on run argv	set theQuery to item 1 of argv	set theNewQuery to (do shell script "echo '" &amp; theQuery &amp; "' | perl -CIOED -p -e 's/(\\p{Block=CJK_Unified_Ideographs}+)/ ~\\1 /g'")	tell application "DEVONthink 3" to activate	tell application "System Events" to tell process "DEVONthink 3"		keystroke "n" using {command down, option down} -- open new window		set focused of text field 1 of group 3 of toolbar 1 of window 1 to true -- focus on search field		set value of text field 1 of group 3 of toolbar 1 of window 1 to theNewQuery		delay 0.1		keystroke return	end tellend run</string>
+				<string>on run argv
+	set theQuery to item 1 of argv
+	set theNewQuery to (do shell script "echo '" &amp; theQuery &amp; "' | perl -CIOED -p -e 's/(\\p{Block=CJK_Unified_Ideographs}+)/ ~\\1 /g'")
+	tell application "DEVONthink 3" to activate
+	tell application "System Events" to tell process "DEVONthink 3"
+		keystroke "n" using {command down, option down} -- open new window
+		set focused of text field 1 of group 3 of toolbar 1 of window 1 to true -- focus on search field
+		set value of text field 1 of group 3 of toolbar 1 of window 1 to theNewQuery
+		delay 0.1
+		keystroke return
+	end tell
+end run</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -562,7 +573,15 @@ open "x-devonthink://search?query=${queryStr}"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python getRecordListByTags.py "selectedTag"</string>
+				<string>macOSVersion=$(sw_vers -productVersion | cut -d '.' -f 1,2)
+
+function version { echo "$@" | awk -F. '{ printf("%d%03d%03d%03d\n", $1,$2,$3,$4); }'; }
+
+if [ $(version $macOSVersion) -lt $(version "12.3") ]; then
+    /usr/bin/python getRecordListByTags.py "selectedTag"
+else
+    /usr/bin/python3 getRecordListByTags.py "selectedTag"
+fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -609,7 +628,15 @@ open "x-devonthink://search?query=${queryStr}"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python getTagsList.py</string>
+				<string>macOSVersion=$(sw_vers -productVersion | cut -d '.' -f 1,2)
+
+function version { echo "$@" | awk -F. '{ printf("%d%03d%03d%03d\n", $1,$2,$3,$4); }'; }
+
+if [ $(version $macOSVersion) -lt $(version "12.3") ]; then
+    /usr/bin/python getTagsList.py
+else
+    /usr/bin/python3 getTagsList.py
+fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -799,7 +826,15 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python getFavorites.py</string>
+				<string>macOSVersion=$(sw_vers -productVersion | cut -d '.' -f 1,2)
+
+function version { echo "$@" | awk -F. '{ printf("%d%03d%03d%03d\n", $1,$2,$3,$4); }'; }
+
+if [ $(version $macOSVersion) -lt $(version "12.3") ]; then
+    /usr/bin/python getFavorites.py
+else
+    /usr/bin/python3 getFavorites.py
+fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -828,7 +863,13 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>on run	set theQuery to "{query}"	tell application "DEVONthink 3"		load workspace theQuery		activate	end tellend run</string>
+				<string>on run
+	set theQuery to "{query}"
+	tell application "DEVONthink 3"
+		load workspace theQuery
+		activate
+	end tell
+end run</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -871,7 +912,15 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python workspace.py</string>
+				<string>macOSVersion=$(sw_vers -productVersion | cut -d '.' -f 1,2)
+
+function version { echo "$@" | awk -F. '{ printf("%d%03d%03d%03d\n", $1,$2,$3,$4); }'; }
+
+if [ $(version $macOSVersion) -lt $(version "12.3") ]; then
+    /usr/bin/python workspace.py
+else
+    /usr/bin/python3 workspace.py
+fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -921,7 +970,12 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>on run	set theQuery to "{query}"	tell application "DEVONthink 3"		save workspace theQuery	end tellend run</string>
+				<string>on run
+	set theQuery to "{query}"
+	tell application "DEVONthink 3"
+		save workspace theQuery
+	end tell
+end run</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1086,7 +1140,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<key>filterOutGroup</key>
 		<string></string>
 		<key>ignoredDbUuidList</key>
-		<string>1FC1A637-D8CA-4807-B806-8617966870B5</string>
+		<string></string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
@@ -1094,7 +1148,7 @@ open "x-devonthink-item://${1}?reveal=1"</string>
 		<string>filterOutGroup</string>
 	</array>
 	<key>version</key>
-	<string>7.5</string>
+	<string>7.6</string>
 	<key>webaddress</key>
 	<string>https://github.com/mpco/AlfredWorkflow-DEVONthink-Search</string>
 </dict>

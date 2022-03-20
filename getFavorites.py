@@ -10,7 +10,10 @@ filePath = os.path.expanduser("~/Library/Application Support/DEVONthink 3/Favori
 result = {"items": []}
 
 if os.path.exists(filePath):
-    plObjList = plistlib.readPlist(filePath)
+    try:
+        plObjList = plistlib.load(open(filePath, "rb"))
+    except AttributeError:
+        plObjList = plistlib.readPlist(filePath)
     for plobj in plObjList:
         if "UUID" in plobj:
             result["items"].append({
