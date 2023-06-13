@@ -19,6 +19,8 @@
 
 **NB:** For DEVONthink 2.x, you should use the versions of this workflow before V7.0. Switch to [Branch DEVONthink 2.x](https://github.com/mpco/AlfredWorkflow-DEVONthink-Search/tree/DEVONthink2.x) to access the README document and source code.
 
+**Sorry, no more updates as I no longer use a Mac computer and the installation of macOS virtual machine failed.**
+
 ## How to Use
 
 - Type `dnt + keywords` to search in all opened databases in Alfred. **Search results are sorted by relevance score, consistent with DEVONthink.**
